@@ -1,0 +1,478 @@
+/* Start Sass Componants */
+$mainColor: #A9D7E4;
+$secondaryColor: #f58787;
+/* Mixins */
+@mixin shadow ($s1 , $s2 , $s3 , $c) {
+	-webkit-box-shadow: $s1 $s2 $s3 $c;
+	-moz-box-shadow: $s1 $s2 $s3 $c;
+	-o-box-shadow: $s1 $s2 $s3 $c;
+	box-shadow: $s1 $s2 $s3 $c;
+}
+@mixin radius ($r) {
+	-webkit-border-radius: $r;
+	-moz-border-radius: $r;
+	-o-border-radius: $r;
+	border-radius: $r;
+}
+@mixin translating ($t1 ,$t2) {
+	-webkit-transform: translate($t1, $t2);
+	-moz-transform: translate($t1, $t2);
+	-o-transform: translate($t1, $t2);
+	transform: translate($t1, $t2);
+}
+@mixin transitioning ($tg) {
+	-webkit-transition: all $tg ease-in-out;
+	-moz-transition: all $tg ease-in-out;
+	-o-transition: all $tg ease-in-out;
+	transition: all $tg ease-in-out;
+}
+/* Extended Classes */
+%bSizing {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* End Sass Componants */
+/* Start Main Rules */
+body {
+	font-family: 'Noto Sans' , 'arial' , 'sans';
+	background-color: #212427;
+	@extend %bSizing;
+}
+/* End Main Rules */
+/* Start Nav Bar Style */
+.nav-bar {
+	.navbar-dark {
+		z-index: 2;
+		@include shadow(0, 2px, 30px, #444);
+		.navbar-brand {
+			span {
+				color: $secondaryColor;
+				font-size: 30px;
+				font-weight: bold;
+				&:last-of-type {
+					color: $mainColor;
+					font-weight: normal;
+					font-size: 25px;
+				}
+			}
+		}
+		.navbar-nav {
+			.dropdown-menu.show {
+				background-color: #3f4750;
+				.dropdown-item {
+					color: $mainColor;
+					@include transitioning(0.4s);
+					&:hover {
+						background-color: transparent;
+						color: $secondaryColor;
+						margin-left: 5px;
+					}
+				}
+			}
+			.nav-link {
+				color: $mainColor;
+				margin-left: 5px;
+				&:hover {
+					color: $secondaryColor;
+				}
+			}
+			.active > .nav-link {
+				color: $secondaryColor;
+			}
+		}
+	}
+}
+/* End Nav Bar Style */
+/* Start Data Section Style */
+.data {
+	.card {
+		padding: 0;
+		background-color: #343A40;
+    width: 40% !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+		transform: translate(-50%, -28%);
+		border: 1px solid #777;
+		.card-body {
+			padding: 110px 0 15px;
+			display: flex;
+			justify-content: center;
+			.card-img-top {
+				position: absolute;
+				top: -100px;
+				width: 200px;
+				height: 200px;
+				border: 1px solid #777;
+				padding: 3px;
+				background-color: #343A40;
+				@include radius(50%);
+			}
+			ul {
+				li {
+					font-size: 20px;
+					color: $mainColor;
+					i {
+						color: $secondaryColor;
+						width: 25px;
+						color: $secondaryColor;
+					}
+					span {
+						color: $secondaryColor;
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+	}
+}
+/* Start Data Section Media */
+@media (max-width: 540px) {
+	.data {
+		.card {
+			width: 95% !important;
+		}
+	}
+}
+@media (min-width: 541px) and (max-width: 731px) {
+	.data {
+		.card {
+			width: 70% !important;
+		}
+	}
+}
+@media (min-width: 732px) and (max-width: 1009px) {
+	.data {
+		.card {
+			width: 55% !important;
+		}
+	}
+}
+@media (min-width: 1010px) and (max-width: 1125) {
+	.data {
+		.card {
+			width: 50% !important;
+		}
+	}
+}
+/* End Data Section Style */
+
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+/* Start Stude Table Section Style */
+.study-table {
+	.table {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		@include translating(-50%, 30%);
+		@include shadow(0, 2px, 30px, #444);
+		thead {
+			tr {
+				th {
+					&:first-of-type {
+						color: $secondaryColor;
+					}
+				}
+			}
+		}
+		th {
+			color: $mainColor;
+		}
+		td {
+			color: #dad7d7;
+		}
+	}
+}
+/* Start Stydy Table Section Media */
+@media (max-width: 560px) {
+	.study-table {
+		.table {
+			font-size: 12px;
+		}
+	}
+}
+/* End Study Table Section Style */
+
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+/* Start Exam Table Section Style */
+.exam-table {
+	.table {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		@include translating(-50%, 18%);
+		@include shadow(0, 2px, 30px, #444);
+		thead {
+			tr {
+				th {
+					&:first-of-type {
+						color: $secondaryColor;
+						text-align: left;
+					}
+				}
+			}
+		}
+		th {
+			color: $mainColor;
+		}
+		td {
+			color: #dad7d7;
+			text-align: center;
+		}
+	}
+}
+/* Start Exam Table Section Media */
+@media (max-width: 560px) {
+	.exam-table {
+		.table {
+			font-size: 12px;
+		}
+	}
+}
+/* End Exam Table Section Style */
+
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+/* Start Term Score Section Style */
+.term-score {
+	.table {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		@include translating(-50%, 3%);
+		@include shadow(0, 2px, 30px, #444);
+		thead {
+			.term-name {
+				color: $secondaryColor;
+				font-size: 20px;
+			}
+		}
+		th {
+			color: $mainColor;
+		}
+		td {
+			color: #dad7d7;
+			text-align: center;
+			p {
+				margin: 0 0 7px;
+			}
+		}
+	}
+}
+/* Start Term Score Section Media */
+@media (max-width: 560px) {
+	.term-score {
+		.table {
+			font-size: 12px;
+		}
+	}
+}
+/* End Term Score Section Style */
+
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+/* Start General Score Section Style */
+.general-score {
+	.table {
+		margin-bottom: 70px;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		@include translating(-50%, 3%);
+		@include shadow(0, 2px, 30px, #444);
+		thead {
+			.term-name {
+				color: $secondaryColor;
+				font-size: 20px;
+			}
+		}
+		th {
+			color: $mainColor;
+		}
+		td {
+			color: #dad7d7;
+			text-align: center;
+			p {
+				margin: 0 0 7px;
+			}
+		}
+	}
+}
+/* Start General Score Section Media */
+@media (max-width: 560px) {
+	.term-score {
+		.table {
+			font-size: 12px;
+		}
+	}
+}
+/* End General Score Section Style */
+
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+/* Start Monthly Report Section Style */
+.monthly-report {
+	@include translating(0 , 5%);
+	.card {
+		margin-bottom: 30px;
+		border: none;
+		.card-body {
+			background-color: #262c2f;
+			h3 {
+				color: $secondaryColor;
+				margin-bottom: 20px;
+			}
+			.month-score {
+				.table {	
+					@include shadow(0, 2px, 30px, #444);
+					thead {
+						.term-name {
+							color: $secondaryColor;
+							font-size: 20px;
+						}
+					}
+					th {
+						color: $mainColor;
+					}
+					td {
+						color: #dad7d7;
+						text-align: center;
+						p {
+							margin: 0 0 7px;
+						}
+					}
+				}
+			}
+			.card-text {
+				color: $mainColor;
+			}
+		}
+	}
+}
+/* Start Monthly Report section Media */
+@media (max-width: 560px) {
+	.month-score {
+		.table {
+			font-size: 12px;
+		}
+	}
+}
+/* End Monthly Report Section Style */
+
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+/* Start Complaints And Suggestion Section Style */
+.comp-and-sugg {
+	h3 {
+		color: $mainColor;
+		margin-top: 50px;
+		line-height: 1.5;
+		span {
+			color: $secondaryColor;
+		}
+	}
+	form {
+		textarea {
+			width: 100%;
+			height: 250px;
+			margin-top: 20px;
+			color: #fff;
+			background-color: #3f4750;
+			border: none;
+			font-size: 20px;
+			@include radius(10px);
+			@include shadow(0, 0, 20px, #444)
+		}
+		input[type="submit"] {
+			margin-top: 20px;
+			padding: 8px 30px;
+			font-weight: 600;
+			background-color: $secondaryColor;
+			border: none;
+			color: #212427;
+			@include radius(3px);
+		}
+	}
+}
+/* Start Complaints And Suggestion Section Media */
+@media (min-width: 448px) and (max-width: 767px) {
+	.comp-and-sugg {
+		h3 {
+			font-size: 22px;
+		}
+		form {
+			textarea {
+				font-size: 17px;
+			}
+		}
+	}
+}
+@media (max-width: 447px) {
+	.comp-and-sugg {
+		h3 {
+			margin-top: 65px;
+			font-size: 20px;
+		}
+	}
+}
+/* Start Complaints And Suggestion Section Style */
+
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+/* Start Change Password Section Style */
+.change-pass {
+	form {
+		margin: 70px auto;
+		width: 50%;
+		label {
+			display: block;
+			font-size: 20px;
+			color: $mainColor;
+		}
+		input[type="password"] {
+			background-color: #3f4750;
+			color: #fff;
+			border: none;
+			padding: 10px;
+			width: 100%;
+			margin-bottom: 25px;
+			@include radius(5px);
+		}
+		input[type="submit"] {
+			display: block;
+			color: #212427;
+			background-color: $secondaryColor;
+			border: none;
+			padding: 8px 30px;
+			@include radius(3px);
+		}
+	}
+}
+/* Start Change Password Section Media */
+@media (min-width: 768px) and (max-width: 991px) {
+	.change-pass {
+		form {
+			width: 80%;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.change-pass {
+		form {
+			width: 90%;
+		}
+	}
+}
+/* End Change Password Section Style */
+

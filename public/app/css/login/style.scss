@@ -1,0 +1,252 @@
+/** Start Sass Components **/
+$mainColor: #A9D7E4;
+$secondaryColor: #f58787;
+$ThirdColor: #fff;
+$borderColor: #777;
+$fontColor: #555;
+/* Mixins */
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+@mixin translate-scale($x, $y, $s) {
+  -webkit-transform:translate($x, $y) scale($s);
+  -moz-transform:translate($x, $y) scale($s);
+  -o-transform:translate($x, $y) scale($s);
+  transform:translate($x, $y) scale($s);
+}
+@mixin boxSizing($prop) {
+  -webkit-box-sizing: $prop;
+  -moz-box-sizing: $prop;
+  -o-box-sizing: $prop;
+  box-sizing: $prop;
+}
+@mixin bRadius($r1, $r2, $r3, $r4) {
+  -webkit-border-radius: $r1 $r2 $r3 $r4;
+  -moz-border-radius: $r1 $r2 $r3 $r4;
+  -o-border-radius: $r1 $r2 $r3 $r4;
+  border-radius: $r1 $r2 $r3 $r4;
+}
+@mixin transition($t) {
+  -webkit-transition: $t all ease-in-out;
+  -moz-transition: $t all ease-in-out;
+  -o-transition: $t all ease-in-out;
+  transition: $t all ease-in-out;
+}
+/* Extended Classes */
+%main_dimensions {
+  width: 50%;
+  height: 500px;
+}
+/** End Sass Components **/
+
+/** Start Main Rules **/
+* {
+  @include boxSizing(border-box);
+}
+body {
+  background-color: #212427;
+  font-family: 'Martel Sans', sans-serif;
+}
+/** End Main Rules **/
+
+.container {
+  /** Start container Div Style **/
+  width: 70%;
+  height: 500px;
+  background-color: $ThirdColor;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include translate(-50%, -50%);
+  box-shadow: 8px 8px 25px $mainColor, -8px -8px 25px $secondaryColor;
+  @include bRadius(15px, 15px, 15px, 15px);
+  /** Start form_info Div Style **/
+  .form_info {
+    @extend %main_dimensions;
+    float: left;
+    form {
+      padding: 15px;
+      margin-top: 20px;
+      h1 {
+        color: $fontColor;
+        border-bottom: 1px solid $borderColor;
+        padding-bottom: 15px;
+        margin-bottom: 45px;
+        text-align: center;
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          top: 106px;
+          left: 17%;
+          width: 15%;
+          height: 3px;
+          background-color: $secondaryColor;
+        }
+      }
+      label {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 10px 25px 10px 0;
+        color: $fontColor;
+      }
+      input {
+        display: block;
+        width: 100%;
+        cursor: pointer;
+      }
+      input[type="text"],
+      input[type="password"] {
+        padding: 10px;
+        margin: 10px 0 35px 0;
+        font-size: 16px;
+        border: 1px solid $borderColor;
+        @include bRadius(5px, 5px, 5px, 5px);
+      }
+      .radio-container {
+        display: flex;
+        align-items: center;
+        height: 65px;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        top: -20px;
+        .radio-group {
+          margin: -15px;
+          .radio {
+            display: inline-block;
+            vertical-align: middle;
+            font-weight: bold;
+            margin-left: 20px;
+            position: relative;
+            padding-left: 25px;
+            cursor: pointer;
+            input[type="radio"] {
+              display: none;
+              &:checked ~ .circle::after {
+                @include translate-scale(-50%, -50%, 1)
+              }
+            }
+          }
+          .circle {
+            width: 20px;
+            height: 20px;
+            @include bRadius(50%, 50%, 50%, 50%);
+            border: 3px solid $secondaryColor ;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            &::after {
+              content: "";
+              width: 8px;
+              height: 8px;
+              @include bRadius(50%, 50%, 50%, 50%);
+              background: $secondaryColor;
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              @include translate-scale(-50%, -50%, 0);
+              @include transition(0.3s);
+            }
+          }
+        }
+      }
+      input[type="submit"] {
+        padding: 17px;
+        width: 50%;
+        @include translate(-15px, -3px);
+        position: absolute;
+        top: 88%;
+        font-weight: bold;
+        font-size: 25px;
+        background: transparent;
+        border: none;
+        border-top: 1px solid $borderColor;
+        color: $fontColor;
+        @include transition(0.4s);
+        &:hover {
+          cursor: pointer;
+          background: linear-gradient(to right, #f58787, #C5D8DF, #6dd5ed);
+          color: $ThirdColor;
+          @include transition(0.4s);
+          @include bRadius(0, 0, 0, 10px);
+        }
+      }
+    }
+  }
+  /** Start pic Div Style **/
+  .pic {
+    @extend %main_dimensions;
+    background: linear-gradient(to right, #6dd5ed, #C5D8DF, #f58787 );
+    float: right;
+    padding: 15px 15px 15px 20px;
+    @include bRadius(0, 15px, 15px, 0);
+    .content {
+      h1 {
+        color: $ThirdColor;
+        font-size: 30px;
+      }
+    }
+    .photo {
+      width: 100%;
+      position: relative;
+      top: -10%;
+      img {
+        width: 100%;
+        height: 400px;
+      }
+    }
+  }
+}
+/** Start Media **/
+@media(max-width: 767px) { /** mobile & tablet screen **/
+/** Start form_info Div Style **/
+  .container {
+    .form_info {
+      width: 100%;
+      form {
+        h1 {
+          &::after {
+            left: 33%;
+            width: 35%;
+          }
+        }
+        input[type="submit"] {
+          padding: 12px;
+          width: 70%;
+          position: absolute;
+          top: 84%;
+          left: 18%;
+          border: none;
+          color: $fontColor;
+          background: linear-gradient(to right, #f58787, #C5D8DF, #6dd5ed);
+          @include bRadius( 15px, 15px, 15px, 15px);
+          &:hover {
+            @include bRadius( 15px, 15px, 15px, 15px);
+          }
+        }
+      }
+    }
+    .pic {
+      display: none;
+    }
+  }
+}
+
+@media(min-width: 768px) and (max-width: 991px) { /** small screen **/
+  .container {
+    width: 95%;
+  }
+}
+/** End Media **/
+
+/** Start My Framework **/
+.responsive-img {
+  width: 100%;
+}
+/** End My Framework **/

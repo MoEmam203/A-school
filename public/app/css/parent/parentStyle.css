@@ -1,0 +1,441 @@
+/* Start Sass Componants */
+/* Mixins */
+/* Extended Classes */
+body {
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* End Sass Componants */
+/* Start Main Rules */
+body {
+  font-family: 'Noto Sans' , 'arial' , 'sans';
+  background-color: #212427;
+}
+
+/* End Main Rules */
+/* Start Nav Bar Style */
+.nav-bar .navbar-dark {
+  z-index: 2;
+  -webkit-box-shadow: 0 2px 30px #444;
+  -o-box-shadow: 0 2px 30px #444;
+  box-shadow: 0 2px 30px #444;
+}
+
+.nav-bar .navbar-dark .navbar-brand span {
+  color: #f58787;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.nav-bar .navbar-dark .navbar-brand span:last-of-type {
+  color: #A9D7E4;
+  font-weight: normal;
+  font-size: 25px;
+}
+
+.nav-bar .navbar-dark .navbar-nav .dropdown-menu.show {
+  background-color: #3f4750;
+}
+
+.nav-bar .navbar-dark .navbar-nav .dropdown-menu.show .dropdown-item {
+  color: #A9D7E4;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.nav-bar .navbar-dark .navbar-nav .dropdown-menu.show .dropdown-item:hover {
+  background-color: transparent;
+  color: #f58787;
+  margin-left: 5px;
+}
+
+.nav-bar .navbar-dark .navbar-nav .nav-link {
+  color: #A9D7E4;
+  margin-left: 5px;
+}
+
+.nav-bar .navbar-dark .navbar-nav .nav-link:hover {
+  color: #f58787;
+}
+
+.nav-bar .navbar-dark .navbar-nav .active > .nav-link {
+  color: #f58787;
+}
+
+/* End Nav Bar Style */
+/* Start Data Section Style */
+.data .card {
+  padding: 0;
+  background-color: #343A40;
+  width: 40% !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -28%);
+          transform: translate(-50%, -28%);
+  border: 1px solid #777;
+}
+
+.data .card .card-body {
+  padding: 110px 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.data .card .card-body .card-img-top {
+  position: absolute;
+  top: -100px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #777;
+  padding: 3px;
+  background-color: #343A40;
+  border-radius: 50%;
+}
+
+.data .card .card-body ul li {
+  font-size: 20px;
+  color: #A9D7E4;
+}
+
+.data .card .card-body ul li i {
+  color: #f58787;
+  width: 25px;
+  color: #f58787;
+}
+
+.data .card .card-body ul li span {
+  color: #f58787;
+  margin-right: 5px;
+}
+
+/* Start Data Section Media */
+@media (max-width: 540px) {
+  .data .card {
+    width: 95% !important;
+  }
+}
+
+@media (min-width: 541px) and (max-width: 731px) {
+  .data .card {
+    width: 70% !important;
+  }
+}
+
+@media (min-width: 732px) and (max-width: 1009px) {
+  .data .card {
+    width: 55% !important;
+  }
+}
+
+@media (min-width: 1010px) and (max-width: 1125) {
+  .data .card {
+    width: 50% !important;
+  }
+}
+
+/* End Data Section Style */
+/* Start Stude Table Section Style */
+.study-table .table {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 30%);
+  transform: translate(-50%, 30%);
+  -webkit-box-shadow: 0 2px 30px #444;
+  -o-box-shadow: 0 2px 30px #444;
+  box-shadow: 0 2px 30px #444;
+}
+
+.study-table .table thead tr th:first-of-type {
+  color: #f58787;
+}
+
+.study-table .table th {
+  color: #A9D7E4;
+}
+
+.study-table .table td {
+  color: #dad7d7;
+}
+
+/* Start Stydy Table Section Media */
+@media (max-width: 560px) {
+  .study-table .table {
+    font-size: 12px;
+  }
+}
+
+/* End Study Table Section Style */
+/* Start Exam Table Section Style */
+.exam-table .table {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 18%);
+  transform: translate(-50%, 18%);
+  -webkit-box-shadow: 0 2px 30px #444;
+  -o-box-shadow: 0 2px 30px #444;
+  box-shadow: 0 2px 30px #444;
+}
+
+.exam-table .table thead tr th:first-of-type {
+  color: #f58787;
+  text-align: left;
+}
+
+.exam-table .table th {
+  color: #A9D7E4;
+}
+
+.exam-table .table td {
+  color: #dad7d7;
+  text-align: center;
+}
+
+/* Start Exam Table Section Media */
+@media (max-width: 560px) {
+  .exam-table .table {
+    font-size: 12px;
+  }
+}
+
+/* End Exam Table Section Style */
+/* Start Term Score Section Style */
+.term-score .table {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 3%);
+  transform: translate(-50%, 3%);
+  -webkit-box-shadow: 0 2px 30px #444;
+  -o-box-shadow: 0 2px 30px #444;
+  box-shadow: 0 2px 30px #444;
+}
+
+.term-score .table thead .term-name {
+  color: #f58787;
+  font-size: 20px;
+}
+
+.term-score .table th {
+  color: #A9D7E4;
+}
+
+.term-score .table td {
+  color: #dad7d7;
+  text-align: center;
+}
+
+.term-score .table td p {
+  margin: 0 0 7px;
+}
+
+/* Start Term Score Section Media */
+@media (max-width: 560px) {
+  .term-score .table {
+    font-size: 12px;
+  }
+}
+
+/* End Term Score Section Style */
+/* Start General Score Section Style */
+.general-score .table {
+  margin-bottom: 70px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 3%);
+  transform: translate(-50%, 3%);
+  -webkit-box-shadow: 0 2px 30px #444;
+  -o-box-shadow: 0 2px 30px #444;
+  box-shadow: 0 2px 30px #444;
+}
+
+.general-score .table thead .term-name {
+  color: #f58787;
+  font-size: 20px;
+}
+
+.general-score .table th {
+  color: #A9D7E4;
+}
+
+.general-score .table td {
+  color: #dad7d7;
+  text-align: center;
+}
+
+.general-score .table td p {
+  margin: 0 0 7px;
+}
+
+/* Start General Score Section Media */
+@media (max-width: 560px) {
+  .term-score .table {
+    font-size: 12px;
+  }
+}
+
+/* End General Score Section Style */
+/* Start Monthly Report Section Style */
+.monthly-report {
+  -webkit-transform: translate(0, 5%);
+  transform: translate(0, 5%);
+}
+
+.monthly-report .card {
+  margin-bottom: 30px;
+  border: none;
+}
+
+.monthly-report .card .card-body {
+  background-color: #262c2f;
+}
+
+.monthly-report .card .card-body h3 {
+  color: #f58787;
+  margin-bottom: 20px;
+}
+
+.monthly-report .card .card-body .month-score .table {
+  -webkit-box-shadow: 0 2px 30px #444;
+  -o-box-shadow: 0 2px 30px #444;
+  box-shadow: 0 2px 30px #444;
+}
+
+.monthly-report .card .card-body .month-score .table thead .term-name {
+  color: #f58787;
+  font-size: 20px;
+}
+
+.monthly-report .card .card-body .month-score .table th {
+  color: #A9D7E4;
+}
+
+.monthly-report .card .card-body .month-score .table td {
+  color: #dad7d7;
+  text-align: center;
+}
+
+.monthly-report .card .card-body .month-score .table td p {
+  margin: 0 0 7px;
+}
+
+.monthly-report .card .card-body .card-text {
+  color: #A9D7E4;
+}
+
+/* Start Monthly Report section Media */
+@media (max-width: 560px) {
+  .month-score .table {
+    font-size: 12px;
+  }
+}
+
+/* End Monthly Report Section Style */
+/* Start Complaints And Suggestion Section Style */
+.comp-and-sugg h3 {
+  color: #A9D7E4;
+  margin-top: 50px;
+  line-height: 1.5;
+}
+
+.comp-and-sugg h3 span {
+  color: #f58787;
+}
+
+.comp-and-sugg form textarea {
+  width: 100%;
+  height: 250px;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #3f4750;
+  border: none;
+  font-size: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 20px #444;
+  -o-box-shadow: 0 0 20px #444;
+  box-shadow: 0 0 20px #444;
+}
+
+.comp-and-sugg form input[type="submit"] {
+  margin-top: 20px;
+  padding: 8px 30px;
+  font-weight: 600;
+  background-color: #f58787;
+  border: none;
+  color: #212427;
+  border-radius: 3px;
+}
+
+/* Start Complaints And Suggestion Section Media */
+@media (min-width: 448px) and (max-width: 767px) {
+  .comp-and-sugg h3 {
+    font-size: 22px;
+  }
+  .comp-and-sugg form textarea {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 447px) {
+  .comp-and-sugg h3 {
+    margin-top: 65px;
+    font-size: 20px;
+  }
+}
+
+/* Start Complaints And Suggestion Section Style */
+/* Start Change Password Section Style */
+.change-pass form {
+  margin: 70px auto;
+  width: 50%;
+}
+
+.change-pass form label {
+  display: block;
+  font-size: 20px;
+  color: #A9D7E4;
+}
+
+.change-pass form input[type="password"] {
+  background-color: #3f4750;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 25px;
+  border-radius: 5px;
+}
+
+.change-pass form input[type="submit"] {
+  display: block;
+  color: #212427;
+  background-color: #f58787;
+  border: none;
+  padding: 8px 30px;
+  border-radius: 3px;
+}
+
+/* Start Change Password Section Media */
+@media (min-width: 768px) and (max-width: 991px) {
+  .change-pass form {
+    width: 80%;
+  }
+}
+
+@media (max-width: 767px) {
+  .change-pass form {
+    width: 90%;
+  }
+}
+
+/* End Change Password Section Style */
+/*# sourceMappingURL=parentStyle.css.map */

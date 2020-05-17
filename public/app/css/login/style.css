@@ -1,0 +1,250 @@
+/** Start Sass Components **/
+/* Mixins */
+/* Extended Classes */
+.container .form_info, .container .pic {
+  width: 50%;
+  height: 500px;
+}
+
+/** End Sass Components **/
+/** Start Main Rules **/
+* {
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #212427;
+  font-family: 'Martel Sans', sans-serif;
+}
+
+/** End Main Rules **/
+.container {
+  /** Start container Div Style **/
+  width: 70%;
+  height: 500px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-box-shadow: 8px 8px 25px #A9D7E4, -8px -8px 25px #f58787;
+          box-shadow: 8px 8px 25px #A9D7E4, -8px -8px 25px #f58787;
+  border-radius: 15px 15px 15px 15px;
+  /** Start form_info Div Style **/
+  /** Start pic Div Style **/
+}
+
+.container .form_info {
+  float: left;
+}
+
+.container .form_info form {
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.container .form_info form h1 {
+  color: #555;
+  border-bottom: 1px solid #777;
+  padding-bottom: 15px;
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.container .form_info form h1::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 106px;
+  left: 17%;
+  width: 15%;
+  height: 3px;
+  background-color: #f58787;
+}
+
+.container .form_info form label {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px 25px 10px 0;
+  color: #555;
+}
+
+.container .form_info form input {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.container .form_info form input[type="text"],
+.container .form_info form input[type="password"] {
+  padding: 10px;
+  margin: 10px 0 35px 0;
+  font-size: 16px;
+  border: 1px solid #777;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.container .form_info form .radio-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 65px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: -20px;
+}
+
+.container .form_info form .radio-container .radio-group {
+  margin: -15px;
+}
+
+.container .form_info form .radio-container .radio-group .radio {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+  margin-left: 20px;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+.container .form_info form .radio-container .radio-group .radio input[type="radio"] {
+  display: none;
+}
+
+.container .form_info form .radio-container .radio-group .radio input[type="radio"]:checked ~ .circle::after {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.container .form_info form .radio-container .radio-group .circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50% 50% 50% 50%;
+  border: 3px solid #f58787;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.container .form_info form .radio-container .radio-group .circle::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50% 50% 50% 50%;
+  background: #f58787;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) scale(0);
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+.container .form_info form input[type="submit"] {
+  padding: 17px;
+  width: 50%;
+  -webkit-transform: translate(-15px, -3px);
+  transform: translate(-15px, -3px);
+  position: absolute;
+  top: 88%;
+  font-weight: bold;
+  font-size: 25px;
+  background: transparent;
+  border: none;
+  border-top: 1px solid #777;
+  color: #555;
+  -webkit-transition: 0.4s all ease-in-out;
+  transition: 0.4s all ease-in-out;
+}
+
+.container .form_info form input[type="submit"]:hover {
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, from(#f58787), color-stop(#C5D8DF), to(#6dd5ed));
+  background: linear-gradient(to right, #f58787, #C5D8DF, #6dd5ed);
+  color: #fff;
+  -webkit-transition: 0.4s all ease-in-out;
+  transition: 0.4s all ease-in-out;
+  border-radius: 0 0 0 10px;
+}
+
+.container .pic {
+  background: -webkit-gradient(linear, left top, right top, from(#6dd5ed), color-stop(#C5D8DF), to(#f58787));
+  background: linear-gradient(to right, #6dd5ed, #C5D8DF, #f58787);
+  float: right;
+  padding: 15px 15px 15px 20px;
+  border-radius: 0 15px 15px 0;
+}
+
+.container .pic .content h1 {
+  color: #fff;
+  font-size: 30px;
+}
+
+.container .pic .photo {
+  width: 100%;
+  position: relative;
+  top: -10%;
+}
+
+.container .pic .photo img {
+  width: 100%;
+  height: 400px;
+}
+
+/** Start Media **/
+@media (max-width: 767px) {
+  /** mobile & tablet screen **/
+  /** Start form_info Div Style **/
+  .container .form_info {
+    width: 100%;
+  }
+  .container .form_info form h1::after {
+    left: 33%;
+    width: 35%;
+  }
+  .container .form_info form input[type="submit"] {
+    padding: 12px;
+    width: 70%;
+    position: absolute;
+    top: 84%;
+    left: 18%;
+    border: none;
+    color: #555;
+    background: -webkit-gradient(linear, left top, right top, from(#f58787), color-stop(#C5D8DF), to(#6dd5ed));
+    background: linear-gradient(to right, #f58787, #C5D8DF, #6dd5ed);
+    border-radius: 15px 15px 15px 15px;
+  }
+  .container .form_info form input[type="submit"]:hover {
+    border-radius: 15px 15px 15px 15px;
+  }
+  .container .pic {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /** small screen **/
+  .container {
+    width: 95%;
+  }
+}
+
+/** End Media **/
+/** Start My Framework **/
+.responsive-img {
+  width: 100%;
+}
+
+/** End My Framework **/
+/*# sourceMappingURL=style.css.map */
