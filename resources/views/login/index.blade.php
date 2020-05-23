@@ -24,10 +24,10 @@
 
           <h1 id="h1"> Login </h1>
           <label for="userName" id="l1"> Username </label>
-          <input type="text" name='name' placeholder="Enter Your ID" id="userName" required/>
+          <input type="text" name='u_id' placeholder="Enter Your ID" id="userName" required/>
 
-          @if ($errors->has('name'))
-           <span class="name">{{ $errors->first('name') }}</span>
+          @if ($errors->has('u_id'))
+           <span class="error">{{ $errors->first('u_id') }}</span>
           @endif
 
           <label for="pass" id="l2"> Password </label>
