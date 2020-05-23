@@ -13,23 +13,21 @@
   <body>
     <div class="container">
       <div class="form_info">
-      <form action="{{route('post-login')}}" method="post">
-
-        {{ csrf_field() }}
-
-
         @if(Session::has('massage'))
           <div class="alert alert-danger">
             {{Session::get('massage')}}
           </div>
         @endif
+      <form action="{{route('post-login')}}" method="post">
+
+        {{ csrf_field() }}
 
           <h1 id="h1"> Login </h1>
           <label for="userName" id="l1"> Username </label>
-          <input type="text" name='email' placeholder="Enter Your ID" id="userName" required/>
+          <input type="text" name='name' placeholder="Enter Your ID" id="userName" required/>
 
-          @if ($errors->has('email'))
-           <span class="error">{{ $errors->first('email') }}</span>
+          @if ($errors->has('name'))
+           <span class="name">{{ $errors->first('name') }}</span>
           @endif
 
           <label for="pass" id="l2"> Password </label>
