@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Login</title>
     <link rel="stylesheet" href="{{ asset('app/css/login/style.css' )}}" /> 
     <link rel="stylesheet" href="{{asset('app/css/login/normalize.css')}}" />
@@ -12,28 +13,50 @@
   <body>
     <div class="container">
       <div class="form_info">
-        <form action="" method="">
+      <form action="{{route('post-login')}}" method="post">
+
+        {{ csrf_field() }}
+
+
+        @if(Session::has('massage'))
+          <div class="alert alert-danger">
+            {{Session::get('massage')}}
+          </div>
+        @endif
+
           <h1 id="h1"> Login </h1>
           <label for="userName" id="l1"> Username </label>
-          <input type="text" placeholder="Enter Your ID" id="userName" required/>
+          <input type="text" name='email' placeholder="Enter Your ID" id="userName" required/>
+
+          @if ($errors->has('email'))
+           <span class="error">{{ $errors->first('email') }}</span>
+          @endif
+
           <label for="pass" id="l2"> Password </label>
-          <input type="password" placeholder="Enter Your Password" id="pass" required/>
+          <input type="password" name="password" placeholder="Enter Your Password" id="pass" required/>
+
+          @if ($errors->has('password'))
+            <span class="error">{{ $errors->first('password') }}</span>
+          @endif
+
+
+
           <div class="radio-container">
             <div class="radio-group">
               <label class="radio">
-                <input type="radio" value="admin" name="role"> Admin
+                <input type="radio" value="admin" name="is_admin"> Admin
                 <span class="circle"></span>
               </label>
             </div>
             <div class="radio-group">
               <label class="radio">
-                <input type="radio" value="Parent" name="role"> Parent
+                <input type="radio" value="Parent" name="is_admin"> Parent
                 <span class="circle"></span>
               </label>
             </div>
             <div class="radio-group">
               <label class="radio">
-                <input type="radio" value="student" name="role"> Student
+                <input type="radio" value="student" name="is_admin"> Student
                 <span class="circle"></span>
               </label>
             </div>
@@ -50,6 +73,10 @@
         </div>
       </div>
     </div>
+
+    
+    
+
     <!-- Start Scripts -->
     <script src="{{ asset('app/js/jquery.js') }}"></script>
     <!-- End Scripts -->

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -14,10 +15,10 @@ class UserSeeder extends Seeder
     {
        $s1=[
         'u_id'=>203,
-        'name'=>'mostafa emam',
+        'name'=>'mostafa',
         'is_admin'=>'admin',
         'email'=>'mostafa.emam@school.com',
-        'password'=>bcrypt('schoolpass'),
+        'password' => Hash::make('password'),
         'address'=>'mansoura',
         'dob'=>'1995-03-20',
         'blood_type'=>'A+',
@@ -32,7 +33,8 @@ class UserSeeder extends Seeder
         'name' => 'rewan zain',
         'is_admin' => 'student',
         'email' => 'rewan.zain@school.com',
-        'password' => bcrypt('schoolpass'),
+        'password' => Hash::make('password'),
+        'level' => 1,
         'address' => 'mansoura',
         'dob' => '2013-03-01',
         'blood_type' => 'A+',
@@ -45,7 +47,8 @@ class UserSeeder extends Seeder
         'name' => 'mahmoud siliman',
         'is_admin' => 'student',
         'email' => 'mahmoud.siliman@school.com',
-        'password' => bcrypt('schoolpass'),
+        'password' => Hash::make('password'),
+            'level' => 1,
         'address' => 'mansoura',
         'dob' => '2013-03-01',
         'blood_type' => 'A+',
@@ -58,7 +61,8 @@ class UserSeeder extends Seeder
         'name' => 'khaled elsaba',
         'is_admin' => 'student',
         'email' => 'khaled.elsaba@school.com',
-        'password' => bcrypt('schoolpass'),
+            'password' => Hash::make('password'),
+            'level' => 1,
         'address' => 'mansoura',
         'dob' => '2013-03-01',
         'blood_type' => 'A+',
@@ -71,7 +75,8 @@ class UserSeeder extends Seeder
         'name' => 'aya mohamed',
         'is_admin' => 'student',
         'email' => 'aya.mohamed@school.com',
-        'password' => bcrypt('schoolpass'),
+            'password' => Hash::make('password'),
+            'level' => 1,
         'address' => 'mansoura',
         'dob' => '2013-03-01',
         'blood_type' => 'A+',
@@ -84,7 +89,7 @@ class UserSeeder extends Seeder
         'name' => 'zain eldin',
         'is_admin' => 'parent',
         'email' => 'zain.eldin@school.com',
-        'password' => bcrypt('schoolpass'),
+            'password' => Hash::make('password'),
         'address' => 'mansoura',
         'dob' => '1998-03-01',
         'blood_type' => 'A+',
@@ -97,7 +102,7 @@ class UserSeeder extends Seeder
         'name' => 'siliman mohamed',
         'is_admin' => 'parent',
         'email' => 'siliamn.mohamed@school.com',
-        'password' => bcrypt('schoolpass'),
+            'password' => Hash::make('password'),
         'address' => 'mansoura',
         'dob' => '1998-03-01',
         'blood_type' => 'A+',
@@ -110,7 +115,7 @@ class UserSeeder extends Seeder
         'name' => 'elsaba mohamed',
         'is_admin' => 'parent',
         'email' => 'elsaba.mohamed@school.com',
-        'password' => bcrypt('schoolpass'),
+            'password' => Hash::make('password'),
         'address' => 'mansoura',
         'dob' => '1998-03-01',
         'blood_type' => 'A+',
@@ -123,7 +128,7 @@ class UserSeeder extends Seeder
         'name' => 'nada ahmed',
         'is_admin' => 'parent',
         'email' => 'nada.ahmed@school.com',
-        'password' => bcrypt('schoolpass'),
+            'password' => Hash::make('password'),
         'address' => 'mansoura',
         'dob' => '1998-03-01',
         'blood_type' => 'A+',

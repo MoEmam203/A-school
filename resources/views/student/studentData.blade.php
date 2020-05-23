@@ -61,12 +61,16 @@
 			<div class="card-body">
 				<img src="{{asset('app/pics/parentAndStudent/avatar.png')}}" class="card-img-top" alt="avatar">
 				<ul class="list-unstyled">
-					<li> <i class="fas fa-pen"></i> <span>Name: </span> Mahmoud Siliman </li>
-					<li> <i class="fas fa-address-card"></i> <span>ID: </span> 225861 </li>
-					<li> <i class="fas fa-birthday-cake"></i> <span>Date Of Birth: </span> 4 / 5 / 1998 </li>
-					<li> <i class="fas fa-map-marker-alt"></i> <span>Address: </span> El-Galaa St. mansourah  </li>
-					<li> <i class="fas fa-graduation-cap"></i> <span>Level: </span> 4 </li>
-					<li> <i class="fas fa-tint"></i> <span>Blood Type: </span> A+ </li>
+					<li> <i class="fas fa-pen"></i> <span>Name: </span> {{$user->name}} </li>
+					<li> <i class="fas fa-address-card"></i> <span>ID: </span> {{$user->u_id}} </li>
+					<li> <i class="fas fa-birthday-cake"></i> <span>Date Of Birth: </span> {{$user->dob}} </li>
+					<li> <i class="fas fa-map-marker-alt"></i> <span>Address: </span> {{$user->address}}  </li>
+					@if ($user->is_admin == 'student')
+						<li> <i class="fas fa-graduation-cap"></i> <span>Level: </span> {{$user->level}} </li>
+					@endif
+					
+					
+					<li> <i class="fas fa-tint"></i> <span>Blood Type: </span> {{$user->blood_type}}</li>
 				</ul>
 			</div>
 		</div>
