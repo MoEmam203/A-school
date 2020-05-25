@@ -12,9 +12,12 @@
 	</title>
 </head>
 <body>
+
+
     @yield('content')
 
 
+	
 
 	<script src="{{asset('app/js/jquery.js')}}"></script>
 	<script src="{{asset('app/js/popper.js')}}"></script>

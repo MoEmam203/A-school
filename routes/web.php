@@ -16,14 +16,21 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Login & Logout
 Route::get('/', 'LoginController@index')->name('login');
 Route::post('/','LoginController@postLogin')->name('post-login');
-Route::get('/complaints', 'complaintsController@create')->name('create-complaint');
-Route::post('/complaints', 'complaintsController@store')->name('store-complaint');
-Auth::routes();
+Route::get('logout', 'LoginController@logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+// Complaints
+Route::get('/complaints', 'complaintsController@create')->name('create-complaint')->middleware('auth');
+Route::post('/complaints', 'complaintsController@store')->name('store-complaint');
+
+// Changing password
+Route::get('change-password', 'ChangePasswordController@index');
+
+Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
+
 
 Auth::routes();
 

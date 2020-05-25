@@ -76,6 +76,13 @@ class LoginController extends Controller
             Session()->flash('message', 'Oppes! You have entered invalid credentials');
             return redirect()->back();
         }
+    }
 
+
+    public function logout()
+    {
+        Session::flush();
+        Auth::logout();
+        return Redirect('/');
     }
 }

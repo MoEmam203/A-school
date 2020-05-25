@@ -45,8 +45,8 @@
 								Account
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item active" href="changePassword.html">Change Password</a>
-								<a class="dropdown-item" href="#">Log Out</a>
+								<a class="dropdown-item active" href="{{url('change-password')}}">Change Password</a>
+								<a class="dropdown-item" href="{{url('logout')}}">Log Out</a>
 							</div>
 						</li>
 					</ul>
@@ -58,14 +58,25 @@
   <!-- Start Change Password Section -->
   <section class="change-pass">
     <div class="container">
-      <form action="" method="">
+      <form method="POST" action="{{ route('change.password') }}">
+		@csrf 
+
+		@foreach ($errors->all() as $error)
+
+		<p class="text-danger">{{ $error }}</p>
+
+		@endforeach 
+
         <label> Old Password </label>
-        <input type="password">
+		<input name="current_password" type="password">
+		
         <label> New Password </label>
-        <input type="password">
-        <label> Confirm Password </label>
-        <input type="password">
-        <input type="submit" class="text-uppercase">
+        <input name="new_password" type="password">
+		
+		<label> Confirm Password </label>
+		<input name="new_confirm_password" type="password">
+		
+		<input type="submit" class="text-uppercase">
       </form>
     </div>
   </section>

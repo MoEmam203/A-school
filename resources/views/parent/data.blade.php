@@ -45,8 +45,8 @@
 								Account
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="changePassword.html">Change Password</a>
-								<a class="dropdown-item" href="#">Log Out</a>
+								<a class="dropdown-item" href="{{url('change-password')}}">Change Password</a>
+								<a class="dropdown-item" href="{{url('logout')}}">Log Out</a>
 							</div>
 						</li>
 					</ul>
