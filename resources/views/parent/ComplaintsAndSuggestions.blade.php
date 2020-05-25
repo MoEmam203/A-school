@@ -14,7 +14,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item">
-							<a class="nav-link" href="data.html"> Data <span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="/"> Data <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -59,9 +59,12 @@
   <section class="comp-and-sugg">
     <div class="container">
       <h3 class="text-center"> You Have A Problem Or An Suggestion?! <br> <span> Don't Hesitate </span> </h3>
-      <form action="" method="">
+	  <form action="{{route('store-complaint')}}" method="post">
+		{{ csrf_token() }}
+		 <input  name="user_id" type="hidden" value="401">
+		 {{-- {{ Form::hidden('id', $user->u_id) }} --}}
         <textarea name="complaints-and-suggestions"></textarea>
-        <input type="submit" value="send" class="text-uppercase">
+        <input type="submit" name='content' value="send" class="text-uppercase">
       </form>
     </div>
   </section>

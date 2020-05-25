@@ -19,16 +19,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'LoginController@index')->name('login');
 Route::post('/','LoginController@postLogin')->name('post-login');
-// Route::get('/info/{id}' , 'UserController@show')->name('info');
-
-// Route::group(['prefix' => 'admin' , 'middleware'=>'admin'], function () {
-    
-//     Route::get('/admin','AdminController@index')->name('admin');
-
-
-
-// });
-
+Route::get('/complaints', 'complaintsController@create')->name('create-complaint');
+Route::post('/complaints', 'complaintsController@store')->name('store-complaint');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

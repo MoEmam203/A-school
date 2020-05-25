@@ -38,7 +38,7 @@
 							<a class="nav-link" href="monthlyReport.html">Monthly Report</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="ComplaintsAndSuggestions.html">Complaints and Suggestions</a>
+							<a class="nav-link" href="{{route('create-complaint')}}">Complaints and Suggestions</a>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
