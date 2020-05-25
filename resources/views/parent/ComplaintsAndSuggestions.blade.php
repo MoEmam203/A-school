@@ -61,7 +61,7 @@
       <h3 class="text-center"> You Have A Problem Or An Suggestion?! <br> <span> Don't Hesitate </span> </h3>
 	  <form action="{{route('store-complaint')}}" method="post">
 		{{ csrf_token() }}
-		 <input  name="user_id" type="hidden" value="401">
+		 <input  name="user_id" type="hidden" value="{{$user ?? 'u_id'}}">
 		 {{-- {{ Form::hidden('id', $user->u_id) }} --}}
         <textarea name="complaints-and-suggestions"></textarea>
         <input type="submit" name='content' value="send" class="text-uppercase">
