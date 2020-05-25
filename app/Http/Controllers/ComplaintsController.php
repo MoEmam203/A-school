@@ -10,8 +10,7 @@ class ComplaintsController extends Controller
 
     public function create()
     {
-        $user = User::findOrFail(Auth()->User()->id);
-        return view('parent.ComplaintsAndSuggestions', ['user', $user]);
+        return view('parent.ComplaintsAndSuggestions');
     }
 
     public function store()
