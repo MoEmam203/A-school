@@ -20,6 +20,13 @@ class CreateResultsTable extends Migration
             $table->integer('exam_id')->unsigned();
             $table->integer('student_id')->unsigned();
             $table->timestamps();
+
+            // $table->foreign('student_id')
+            //     ->references('id')
+            //     ->on('users');
+            // $table->foreign('exam_id')
+            //     ->references('id')
+            //     ->on('exams');
         });
     }
 

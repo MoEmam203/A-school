@@ -19,15 +19,15 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'LoginController@index')->name('login');
 Route::post('/','LoginController@postLogin')->name('post-login');
-Route::get('/info/{id}' , 'UserController@show')->name('info');
+// Route::get('/info/{id}' , 'UserController@show')->name('info');
 
-Route::group(['prefix' => 'admin' , 'middleware'=>'admin'], function () {
+// Route::group(['prefix' => 'admin' , 'middleware'=>'admin'], function () {
     
-    Route::get('/admin','AdminController@index')->name('admin');
+//     Route::get('/admin','AdminController@index')->name('admin');
 
 
 
-});
+// });
 
 Auth::routes();
 

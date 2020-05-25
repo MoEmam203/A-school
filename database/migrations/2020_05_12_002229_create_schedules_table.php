@@ -22,6 +22,14 @@ class CreateSchedulesTable extends Migration
             $table->integer('e_id')->unsigned();
             $table->string('type');
             $table->timestamps();
+
+
+            // $table->foreign('sub_id')
+            //     ->references('id')
+            //     ->on('subjects');
+            // $table->foreign('e_id')
+            //     ->references('id')
+            //     ->on('exams');
         });
     }
 

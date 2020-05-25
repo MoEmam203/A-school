@@ -18,6 +18,14 @@ class CreateExamQuestionTable extends Migration
             $table->integer('e_id')->unsigned();
             $table->integer('q_id')->unsigned();
             $table->timestamps();
+
+
+            // $table->foreign('e_id')
+            //     ->references('id')
+            //     ->on('exams');
+            // $table->foreign('q_id')
+            //     ->references('id')
+            //     ->on('questions');
         });
     }
 

@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('level')->nullable();
+            $table->integer('parent_id')->nullable();
             $table->string('address');
             $table->date('dob');
             $table->enum('blood_type', ['A+','A-','B+','B-','O+','O-','AB+','AB-']);

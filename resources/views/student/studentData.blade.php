@@ -64,12 +64,8 @@
 					<li> <i class="fas fa-pen"></i> <span>Name: </span> {{$user->name}} </li>
 					<li> <i class="fas fa-address-card"></i> <span>ID: </span> {{$user->u_id}} </li>
 					<li> <i class="fas fa-birthday-cake"></i> <span>Date Of Birth: </span> {{$user->dob}} </li>
-					<li> <i class="fas fa-map-marker-alt"></i> <span>Address: </span> {{$user->address}}  </li>
-					@if ($user->is_admin == 'student')
-						<li> <i class="fas fa-graduation-cap"></i> <span>Level: </span> {{$user->level}} </li>
-					@endif
-					
-					
+					<li> <i class="fas fa-map-marker-alt"></i> <span>Address: </span> {{$user->address}}  </li>	
+					<li> <i class="fas fa-graduation-cap"></i> <span>Level: </span> {{$user->level}} </li>
 					<li> <i class="fas fa-tint"></i> <span>Blood Type: </span> {{$user->blood_type}}</li>
 				</ul>
 			</div>

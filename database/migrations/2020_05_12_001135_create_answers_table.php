@@ -20,6 +20,10 @@ class CreateAnswersTable extends Migration
             $table->string('type');
             $table->integer('q_id')->unsigned();
             $table->timestamps();
+
+            // $table->foreign('q_id')
+            //     ->references('id')
+            //     ->on('questions');
         });
     }
 
