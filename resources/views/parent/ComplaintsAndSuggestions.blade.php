@@ -61,7 +61,9 @@
       <h3 class="text-center"> You Have A Problem Or An Suggestion?! <br> <span> Don't Hesitate </span> </h3>
 	  <form action="{{route('store-complaint')}}" method="post">
 		@csrf
-	  	<p style="color:rgb(209, 28, 28)">{{Session('mssg')}}</p>
+
+	  	<p style="color:white">{{Session('mssg')}}</p>
+
 		 <input  name="user_id" type="hidden" value="{{Auth()->User()->u_id}}">
 		 {{-- {{ Form::hidden('id', $user->u_id) }} --}}
         <textarea name="complaints-and-suggestions"></textarea>
