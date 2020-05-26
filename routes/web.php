@@ -27,11 +27,16 @@ Route::get('/complaints', 'complaintsController@create')->name('create-complaint
 Route::post('/complaints', 'complaintsController@store')->name('store-complaint');
 
 // Changing password
-Route::get('change-password', 'ChangePasswordController@index');
-
+Route::get('change-password', 'ChangePasswordController@index')->middleware('auth');
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
 
 
-Auth::routes();
+
+// Admin
+Route::get('/admin',function(){
+    echo 'hi admin';
+})->middleware('admin','auth');
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');

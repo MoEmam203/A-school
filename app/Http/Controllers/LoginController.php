@@ -57,7 +57,7 @@ class LoginController extends Controller
             
             // Admin 
             if(Auth()->User()->is_admin == 'admin'){
-                return 'hi admin';
+                return redirect('admin');
             }
 
             // Parent
