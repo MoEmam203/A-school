@@ -22,6 +22,9 @@ Route::post('/','LoginController@postLogin')->name('post-login');
 Route::get('logout', 'LoginController@logout');
 
 
+// Showing Data
+Route::get('/data','UserController@show')->name('data')->middleware('auth');
+
 // Complaints
 Route::get('/complaints', 'complaintsController@create')->name('create-complaint')->middleware('auth');
 Route::post('/complaints', 'complaintsController@store')->name('store-complaint');
@@ -30,13 +33,9 @@ Route::post('/complaints', 'complaintsController@store')->name('store-complaint'
 Route::get('change-password', 'ChangePasswordController@index')->middleware('auth');
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
 
-
-
 // Admin
 Route::get('/admin',function(){
     echo 'hi admin';
 })->middleware('admin','auth');
 
 
-
-Route::get('/home', 'HomeController@index')->name('home');
