@@ -16,7 +16,9 @@ class LoginController extends Controller
 {
 
     public function index(){
-
+        if(Auth()->User()){
+            return redirect()->back();
+        }
         return view('login.index');
     }
 
