@@ -72,7 +72,7 @@
 				<img src="{{asset('app/pics/parentAndStudent/avatar.png')}}" class="card-img-top" alt="avatar">
 				<ul class="list-unstyled">
 					<li> <i class="fas fa-pen"></i> <span>Name: </span> {{$user->name}} </li>
-					<li> <i class="fas fa-address-card"></i> <span>ID: </span> {{$user->u_id}} </li>
+					<li> <i class="fas fa-address-card"></i> <span>ID: </span> {{$user->id}} </li>
 					<li> <i class="fas fa-birthday-cake"></i> <span>Date Of Birth: </span> {{$user->dob}} </li>
 					<li> <i class="fas fa-map-marker-alt"></i> <span>Address: </span> {{$user->address}}  </li>	
 					<li> <i class="fas fa-graduation-cap"></i> <span>Level: </span> {{$user->level}} </li>

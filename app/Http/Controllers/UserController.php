@@ -21,7 +21,7 @@ class UserController extends Controller
 
             // Parent
             if (Auth()->User()->is_admin == 'parent') {
-                $id = Auth()->User()->u_id;
+                $id = Auth()->User()->id;
                 $user = User::where('parent_id',$id)->first();
                 return view('student.studentData', ['user' => $user]);
             }

@@ -64,7 +64,7 @@
 
 	  	<p style="color:white">{{Session('mssg')}}</p>
 
-		 <input  name="user_id" type="hidden" value="{{Auth()->User()->u_id}}">
+		 <input  name="user_id" type="hidden" value="{{Auth()->User()->id}}">
 		 {{-- {{ Form::hidden('id', $user->u_id) }} --}}
         <textarea name="complaints-and-suggestions"></textarea>
         <input type="submit" name='content' value="send" class="text-uppercase">

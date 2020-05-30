@@ -49,13 +49,13 @@ class LoginController extends Controller
         $input = $request->all();
 
         $this->validate($request, [
-            'u_id' => 'required',
+            'id' => 'required',
             'password' => 'required',
             'is_admin' => 'required'
         ]);
 
-        $fieldType = filter_var($request->u_id, FILTER_VALIDATE_EMAIL) ? 'email' : 'u_id';
-        if (auth()->attempt(array($fieldType => $input['u_id'], 'password' => $input['password'], 'is_admin' => $input['is_admin']))) {
+        $fieldType = filter_var($request->u_id, FILTER_VALIDATE_EMAIL) ? 'email' : 'id';
+        if (auth()->attempt(array($fieldType => $input['id'], 'password' => $input['password'], 'is_admin' => $input['is_admin']))) {
         //    return redirect('date');
 
             return Redirect::route('data');

@@ -14,16 +14,16 @@ class CreateAnswersTable extends Migration
     public function up()
     {
         Schema::create('answers', function (Blueprint $table) {
-            $table->id();
-            $table->integer('a_id')->unsigned()->unique();
+            $table->bigIncrements('id');
+            // $table->unsignedInteger('a_id')->unique();
             $table->string('title');
             $table->string('type');
-            $table->integer('q_id')->unsigned();
+            $table->unsignedBigInteger('q_id');
             $table->timestamps();
 
-            // $table->foreign('q_id')
-            //     ->references('id')
-            //     ->on('questions');
+            $table->foreign('q_id')
+                ->references('id')
+                ->on('questions');
         });
     }
 

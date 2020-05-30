@@ -14,22 +14,22 @@ class CreateSchedulesTable extends Migration
     public function up()
     {
         Schema::create('schedules', function (Blueprint $table) {
-            $table->id();
-            $table->integer('s_id')->unsigned()->unique();
+            $table->bigIncrements('id');
+            // $table->unsignedInteger('s_id')->unique();
             $table->date('date');
-            $table->integer('order')->unsigned();
-            $table->integer('sub_id')->unsigned();
-            $table->integer('e_id')->unsigned();
+            $table->unsignedInteger('order');
+            $table->unsignedBigInteger('sub_id');
+            $table->unsignedBigInteger('e_id');
             $table->string('type');
             $table->timestamps();
 
 
-            // $table->foreign('sub_id')
-            //     ->references('id')
-            //     ->on('subjects');
-            // $table->foreign('e_id')
-            //     ->references('id')
-            //     ->on('exams');
+            $table->foreign('sub_id')
+                ->references('id')
+                ->on('subjects');
+            $table->foreign('e_id')
+                ->references('id')
+                ->on('exams');
         });
     }
 

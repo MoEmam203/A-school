@@ -14,18 +14,18 @@ class CreateExamQuestionTable extends Migration
     public function up()
     {
         Schema::create('exam_question', function (Blueprint $table) {
-            $table->id();
-            $table->integer('e_id')->unsigned();
-            $table->integer('q_id')->unsigned();
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('e_id');
+            $table->unsignedBigInteger('q_id');
             $table->timestamps();
 
 
-            // $table->foreign('e_id')
-            //     ->references('id')
-            //     ->on('exams');
-            // $table->foreign('q_id')
-            //     ->references('id')
-            //     ->on('questions');
+            $table->foreign('e_id')
+                ->references('id')
+                ->on('exams');
+            $table->foreign('q_id')
+                ->references('id')
+                ->on('questions');
         });
     }
 

@@ -14,21 +14,21 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->integer('u_id')->unsigned()->unique();
+            $table->bigIncrements('id');
+            // $table->unsignedInteger('u_id')->unique();
             $table->string('name', 50);
             $table->enum('is_admin', ['admin','parent','student']);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('level')->nullable();
-            $table->integer('parent_id')->nullable();
+            $table->unsignedInteger('level')->nullable();
+            $table->unsignedInteger('parent_id')->nullable();
             $table->string('address');
             $table->date('dob');
             $table->enum('blood_type', ['A+','A-','B+','B-','O+','O-','AB+','AB-']);
             $table->string('img')->nullable();
             $table->string('job')->nullable();
-            $table->integer('age')->unsigned();
+            $table->unsignedInteger('age');
             $table->enum('type', ['male', 'female']);
             $table->rememberToken();
             $table->timestamps();

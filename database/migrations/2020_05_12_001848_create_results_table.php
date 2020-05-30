@@ -14,19 +14,19 @@ class CreateResultsTable extends Migration
     public function up()
     {
         Schema::create('results', function (Blueprint $table) {
-            $table->id();
-            $table->integer('r_id')->unique()->unsigned();
-            $table->integer('result')->unsigned();
-            $table->integer('exam_id')->unsigned();
-            $table->integer('student_id')->unsigned();
+            $table->bigIncrements('id');
+            // $table->unsignedInteger('r_id')->unique();
+            $table->unsignedInteger('result');
+            $table->unsignedBigInteger('exam_id');
+            $table->unsignedBigInteger('student_id');
             $table->timestamps();
 
-            // $table->foreign('student_id')
-            //     ->references('id')
-            //     ->on('users');
-            // $table->foreign('exam_id')
-            //     ->references('id')
-            //     ->on('exams');
+            $table->foreign('student_id')
+                ->references('id')
+                ->on('users');
+            $table->foreign('exam_id')
+                ->references('id')
+                ->on('exams');
         });
     }
 
