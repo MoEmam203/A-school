@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\complaint;
 use Illuminate\Http\Request;
+use Session;
 
 class ComplaintsController extends Controller
 {
@@ -24,8 +25,8 @@ class ComplaintsController extends Controller
         $complaint->content = request('complaints-and-suggestions');
         $complaint->user_id = request('user_id');
         $complaint->save();
-
-        return redirect('complaints')->with('mssg', 'Massage sent succsefully');
+        Session()->flash('mssg', 'Massage sent succsefully');
+        return redirect('complaints');
     }
 
     

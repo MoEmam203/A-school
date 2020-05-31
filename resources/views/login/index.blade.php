@@ -8,16 +8,13 @@
     <title>Login</title>
     <link rel="stylesheet" href="{{ asset('app/css/login/style.css' )}}" /> 
     <link rel="stylesheet" href="{{asset('app/css/login/normalize.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Martel+Sans&display=swap">
   </head>
   <body>
     <div class="container">
       <div class="form_info">
-        @if(Session::has('massage'))
-          <div class="alert alert-danger">
-            {{Session::get('massage')}}
-          </div>
-        @endif
+       
       <form action="{{route('post-login')}}" method="post">
 
         {{ csrf_field() }}
@@ -81,6 +78,27 @@
 
     <!-- Start Scripts -->
     <script src="{{ asset('app/js/jquery.js') }}"></script>
+    <script src="{{asset('js/toastr.min.js')}}"></script>
+    <script>
+
+    @if(Session::has('success'))
+        toastr.success("{{Session::get('success')}}")
+	  @endif
+
+	  @if(Session::has('warning'))
+        toastr.warning("{{Session::get('warning')}}")
+	  @endif
+
+	  @if(Session::has('error'))
+        toastr.error("{{Session::get('error')}}")
+	  @endif
+	  
+	  @if(Session::has('info'))
+        toastr.info("{{Session::get('info')}}")
+	  @endif
+
+	</script>
+
     <!-- End Scripts -->
   </body>
 </html>

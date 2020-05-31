@@ -17,6 +17,7 @@ class LoginController extends Controller
 
     public function index(){
         if(Auth()->User()){
+            Session()->flash('error', 'You are alredy logged in !');
             return redirect()->back();
         }
         return view('login.index');
@@ -56,12 +57,12 @@ class LoginController extends Controller
 
         $fieldType = filter_var($request->u_id, FILTER_VALIDATE_EMAIL) ? 'email' : 'id';
         if (auth()->attempt(array($fieldType => $input['id'], 'password' => $input['password'], 'is_admin' => $input['is_admin']))) {
-        //    return redirect('date');
-
+            //    return redirect('date');
+            Session()->flash('success', 'Welcome');
             return Redirect::route('data');
         }
         else {
-            Session()->flash('message', 'Oppes! You have entered invalid credentials');
+            Session()->flash('error', 'Oppes! You have entered invalid credentials');
             return redirect()->back();
         }
     }
@@ -71,6 +72,7 @@ class LoginController extends Controller
     {
         Session::flush();
         Auth::logout();
+        Session()->flash('info', 'Goodbye');
         return Redirect('/');
     }
 }

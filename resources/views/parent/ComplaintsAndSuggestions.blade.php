@@ -62,7 +62,7 @@
 	  <form action="{{route('store-complaint')}}" method="post">
 		@csrf
 
-	  	<p style="color:white">{{Session('mssg')}}</p>
+	  	{{-- <p style="color:white">{{Session('mssg')}}</p> --}}
 
 		 <input  name="user_id" type="hidden" value="{{Auth()->User()->id}}">
 		 {{-- {{ Form::hidden('id', $user->u_id) }} --}}

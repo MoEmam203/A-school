@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
-
+use Session;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 class admin
@@ -17,6 +17,7 @@ class admin
     {
 
         if(Auth()->User()->is_admin != 'admin' ){
+            Session()->flash('warning', 'You can not access it ');
             return redirect()->back();
         }
 

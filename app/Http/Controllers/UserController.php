@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-
+use Session;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -23,6 +23,7 @@ class UserController extends Controller
             if (Auth()->User()->is_admin == 'parent') {
                 $id = Auth()->User()->id;
                 $user = User::where('parent_id',$id)->first();
+                // Session()->flash('mssg', 'Welcome');
                 return view('student.studentData', ['user' => $user]);
             }
 
@@ -30,6 +31,7 @@ class UserController extends Controller
             
             $id = Auth()->User()->id;
             $user = User::findOrFail($id);
+            // Session()->flash('mssg', 'Welcome');
             return view('student.studentData', ['user' => $user]);
             // return Redirect::route('info', array('id' =>$id));
 
