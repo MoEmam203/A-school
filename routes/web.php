@@ -34,8 +34,8 @@ Route::get('change-password', 'ChangePasswordController@index')->middleware('aut
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
 
 // Admin
-Route::get('/admin',function(){
-    echo 'hi admin';
-})->middleware('admin','auth');
-
-
+Route::get('/admin','AdminController@allstudents')->name('students')->middleware('admin','auth');
+Route::get('/admin/parents', 'AdminController@allparents')->name('parents')->middleware('admin', 'auth');
+Route::get('/admin/complaints', 'AdminController@complaints')->name('complaints')->middleware('admin', 'auth');
+Route::get('/admin/create', 'AdminController@create')->name('add-user')->middleware('admin', 'auth');
+Route::post('/admin/store', 'AdminController@store')->name('store-user')->middleware('admin', 'auth');

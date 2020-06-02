@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
     {
        $s1=[
         'id'=>203,
-        'name'=>'mostafa',
+        'name'=>'mostafa emam',
         'is_admin'=>'admin',
         'email'=>'mostafa.emam@school.com',
         'password' => Hash::make('test123'),
@@ -55,7 +55,7 @@ class UserSeeder extends Seeder
         'dob' => '2013-03-01',
         'blood_type' => 'A+',
         'img' => 'uploads/avatar/avatar.png',
-        'age' => 7,
+        'age' => 8,
         'type' => 'male'
     ];
     $s4 = [
@@ -70,7 +70,7 @@ class UserSeeder extends Seeder
         'dob' => '2013-03-01',
         'blood_type' => 'A+',
         'img' => 'uploads/avatar/avatar.png',
-        'age' => 7,
+        'age' => 9,
         'type' => 'male'
     ];
     $s5 = [
@@ -85,7 +85,7 @@ class UserSeeder extends Seeder
         'dob' => '2013-03-01',
         'blood_type' => 'A+',
         'img' => 'uploads/avatar/avatar.png',
-        'age' => 7,
+        'age' => 10,
         'type' => 'female'
     ];
     $s6 = [
@@ -99,6 +99,7 @@ class UserSeeder extends Seeder
         'blood_type' => 'A+',
         'img' => 'uploads/avatar/avatar.png',
         'age' => 30,
+        'job' =>'teacher',
         'type' => 'male'
     ];
     $s7 = [
@@ -112,6 +113,7 @@ class UserSeeder extends Seeder
         'blood_type' => 'A+',
         'img' => 'uploads/avatar/avatar.png',
         'age' => 30,
+            'job' => 'teacher',
         'type' => 'male'
     ];
     $s8 = [
@@ -125,6 +127,7 @@ class UserSeeder extends Seeder
         'blood_type' => 'A+',
         'img' => 'uploads/avatar/avatar.png',
         'age' => 30,
+            'job' => 'teacher',
         'type' => 'male'
     ];
     $s9 = [
@@ -138,6 +141,7 @@ class UserSeeder extends Seeder
         'blood_type' => 'A+',
         'img' => 'uploads/avatar/avatar.png',
         'age' => 30,
+            'job' => 'teacher',
         'type' => 'female'
     ];
 
