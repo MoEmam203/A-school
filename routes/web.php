@@ -25,6 +25,9 @@ Route::get('logout', 'LoginController@logout');
 // Showing Data
 Route::get('/data','UserController@show')->name('data')->middleware('auth');
 
+// subjects
+Route::get('/study', 'ScheduleController@index')->name('study')->middleware('auth');
+
 // Complaints
 Route::get('/complaints', 'complaintsController@create')->name('create-complaint')->middleware('auth');
 Route::post('/complaints', 'complaintsController@store')->name('store-complaint');
@@ -34,8 +37,23 @@ Route::get('change-password', 'ChangePasswordController@index')->middleware('aut
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
 
 // Admin
+
+// show & add user
 Route::get('/admin','AdminController@allstudents')->name('students')->middleware('admin','auth');
 Route::get('/admin/parents', 'AdminController@allparents')->name('parents')->middleware('admin', 'auth');
-Route::get('/admin/complaints', 'AdminController@complaints')->name('complaints')->middleware('admin', 'auth');
 Route::get('/admin/create', 'AdminController@create')->name('add-user')->middleware('admin', 'auth');
 Route::post('/admin/store', 'AdminController@store')->name('store-user')->middleware('admin', 'auth');
+
+// show complaints
+Route::get('/admin/complaints', 'AdminController@complaints')->name('complaints')->middleware('admin', 'auth');
+
+// show & add subject
+Route::get('/admin/subjects', 'SubjectController@all')->name('subjects')->middleware('admin', 'auth');
+Route::get('/admin/subject/create', 'SubjectController@create')->name('add-subject')->middleware('admin', 'auth');
+Route::post('/admin/subject/store', 'SubjectController@store')->name('store-subject')->middleware('admin', 'auth');
+
+
+// show & add schedule
+Route::get('/admin/schedules', 'ScheduleController@all')->name('schedules')->middleware('admin', 'auth');
+Route::get('/admin/schedule/create', 'ScheduleController@create')->name('add-schedule')->middleware('admin', 'auth');
+Route::post('/admin/schedule/store', 'ScheduleController@store')->name('store-schedule')->middleware('admin', 'auth');

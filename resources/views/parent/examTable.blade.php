@@ -21,7 +21,7 @@
 								Tables
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="studyTable.html">Study Table</a>
+								<a class="dropdown-item" href="{{route('study')}}">Study Table</a>
 								<a class="dropdown-item active" href="exameTable.html">Exams Table</a>
 							</div>
 						</li>

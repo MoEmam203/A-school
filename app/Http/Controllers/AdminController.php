@@ -27,15 +27,15 @@ class AdminController extends Controller
 
     public function store(){
         request()->validate([
-            'id' => 'required|unique:users|max:10|numeric|min:3',
+            'id' => 'required',
             'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|',
+            'email' => 'required|email',
+            'password' => 'required|min:6',
             'is_admin' => 'required',
-            'dob' => 'required|date',
+            'dob' => 'required',
             'address' => 'required',
             'type' => 'required',
-            'age' => 'required|numeric',
+            'age' => 'required',
             'blood_type' => 'required', 
             'image' =>'nullable',
             'level' => 'nullable',
@@ -58,9 +58,9 @@ class AdminController extends Controller
         $user->level = request('level');
         $user->parent_id = request('parent_id');
         $user->job = request('job');
-        
+        // dd($user);
         $user->save();
-        Session()->flash('sucess', 'User saved succesfully');
+        Session()->flash('success', 'User saved succesfully');
         return redirect('/admin/create');
     }
 

@@ -13,10 +13,10 @@
             <table class="table table-dark">
                     <thead>
                         <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">content</th>
-                            <th scope="col">User_id</th>
-                            <th scope="col">Delete</th>
+                            <th class="c" scope="col">Id</th>
+                            <th class="c" scope="col">content</th>
+                            <th class="c" scope="col">User_id</th>
+                            <th class="c" scope="col">Delete</th>
                         </tr>
                     </thead>
                     <tbody>

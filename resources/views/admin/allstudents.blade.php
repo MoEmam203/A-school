@@ -13,18 +13,17 @@
             <table class="table table-dark">
                     <thead>
                         <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Img</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Level</th>
-                            <th scope="col">Age</th>
-                            
-                            <th scope="col">Address</th>
-                            <th scope="col">Blood Type</th>
-                            <th scope="col">All Info</th>
-                            <th scope="col">Edit</th>
-                            <th scope="col">Delete</th>
+                            <th class="c" scope="col">Id</th>
+                            <th class="c" scope="col">Img</th>
+                            <th class="c" scope="col">Name</th>
+                            <th class="c" scope="col">Email</th>
+                            <th class="c" scope="col">Level</th>
+                            <th class="c" scope="col">Age</th> 
+                            <th class="c" scope="col">Address</th>
+                            <th class="c" scope="col">Blood Type</th>
+                            <th class="c" scope="col">All Info</th>
+                            <th class="c" scope="col">Edit</th>
+                            <th class="c" scope="col">Delete</th>
                         </tr>
                     </thead>
                     <tbody>

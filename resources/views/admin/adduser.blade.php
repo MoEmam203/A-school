@@ -12,7 +12,8 @@
                 Add a new user
             </h3>
                 <form action="{{route('store-user')}}" method="post" enctype="multipart/form-data">
-                    @csrf
+                    @csrf    
+                    {{-- {{ csrf_token() }} --}}
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <label class="c" for="id">Id</label>

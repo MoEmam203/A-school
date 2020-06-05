@@ -18,8 +18,9 @@ class CreateSubjectsTable extends Migration
             $table->string('code')->unique();
             $table->string('name',20);
             $table->string('description');
-            $table->date('date');
-            $table->unsignedInteger('order');
+            
+            
+            $table->unsignedInteger('level');
             $table->timestamps();
         });
     }

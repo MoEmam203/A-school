@@ -16,10 +16,13 @@ class CreateSchedulesTable extends Migration
         Schema::create('schedules', function (Blueprint $table) {
             $table->bigIncrements('id');
             // $table->unsignedInteger('s_id')->unique();
-            $table->date('date');
-            $table->unsignedInteger('order');
-            $table->unsignedBigInteger('sub_id');
-            $table->unsignedBigInteger('e_id');
+            // $table->date('date');
+            $table->unsignedInteger('level');
+            // $table->unsignedInteger('order');
+            $table->string('day_order');
+            $table->string('class_order');
+            $table->unsignedBigInteger('sub_id')->nullable();
+            $table->unsignedBigInteger('e_id')->nullable();
             $table->string('type');
             $table->timestamps();
 
@@ -30,6 +33,7 @@ class CreateSchedulesTable extends Migration
             $table->foreign('e_id')
                 ->references('id')
                 ->on('exams');
+           
         });
     }
 

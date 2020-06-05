@@ -15,9 +15,13 @@
 	<style>
 		body {
  			background-color: #212427;
-			 font-family: 'Noto Sans' , 'arial' , 'sans';
+			font-family: 'Noto Sans' , 'arial' , 'sans';
 		}
 		.c{color:  #A9D7E4;}
+		.toast-success{background-color:#51A351}
+		.toast-error{background-color:#BD362F}
+		.toast-info{background-color:#2F96B4}
+		.toast-warning{background-color:#F89406}
 	</style>
 </head>
 <body>
@@ -46,8 +50,17 @@
 								Subjects
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="">All Subjects</a>
-								<a class="dropdown-item" href="">Add New Subject</a>
+								<a class="dropdown-item" href="{{route('subjects')}}">All Subjects</a>
+								<a class="dropdown-item" href="{{route('add-subject')}}">Add New Subject</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Schedule
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="{{route('schedules')}}">All Schedule</a>
+								<a class="dropdown-item" href="{{route('add-schedule')}}">Add New Schedule</a>
 							</div>
 						</li>
 						<li class="nav-item">

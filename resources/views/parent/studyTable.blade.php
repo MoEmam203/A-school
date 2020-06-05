@@ -21,7 +21,7 @@
 								Tables
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item active" href="studyTable.html">Study Table</a>
+								<a class="dropdown-item active" href="{{route('study')}}">Study Table</a>
 								<a class="dropdown-item" href="exameTable.html">Exams Table</a>
 							</div>
 						</li>
@@ -80,58 +80,12 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th scope="row"> SAT </th>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-					</tr>
-					<tr>
-						<th scope="row"> SUM </th>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-					</tr>
-					<tr>
-						<th scope="row"> MON </th>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-					</tr>
-					<tr>
-						<th scope="row"> TUE </th>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-					</tr>
-					<tr>
-						<th scope="row"> WED </th>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-					</tr>
-					<tr>
-						<th scope="row"> THU </th>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
+						@foreach ($s as $s)
+							<th scope="row"> {{$s->day_order}} </th>
+							
+							<td> {{$s->subject->name}} </td>
+							
+						@endforeach
 					</tr>
 				</tbody>
 			</table>
