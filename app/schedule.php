@@ -8,7 +8,9 @@ class schedule extends Model
 {
     public function subject(){
 
+
             return $this->belongsTo('App\subject', 'sub_id', 'id');
         
+
     }
 }
