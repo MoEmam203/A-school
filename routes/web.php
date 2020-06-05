@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 */
 // Login & Logout
 Route::get('/', 'LoginController@index')->name('login');
-Route::post('/','LoginController@postLogin')->name('post-login');
+Route::post('/login','LoginController@postLogin')->name('post-login');
 Route::get('logout', 'LoginController@logout');
 
 

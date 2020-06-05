@@ -47,6 +47,7 @@ class LoginController extends Controller
 
 
     public function postLogin(Request $request){
+       
         $input = $request->all();
 
         $this->validate($request, [
