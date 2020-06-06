@@ -38,7 +38,7 @@
                         <div class="form-group col-md-3">
                             <label class="c" for="is_admin">Is_Admin</label>
                             <select class="form-control" id="is_admin" name="is_admin" >
-                                <option selected>Select a type ..</option>
+                                <option selected value="{{$user->is_admin}}">{{$user->is_admin}}</option>
                                 <option value="admin" >Admin</option>
                                 <option value="student" >Student</option>
                                 <option value="parent" >Parent</option>
@@ -71,7 +71,7 @@
                         <div class="form-group col-md-3">
                             <label class="c" for="type">Type</label>
                             <select class="form-control" id="type" name="type" >
-                                <option selected>Select a type ..</option>
+                                <option selected  value="{{$user->type}}">{{$user->type}}</option>
                                 <option value="male" >Male</option>
                                 <option value="female">Female</option>
                             </select>
@@ -89,7 +89,7 @@
                         <div class="form-group col-md-3">
                             <label class="c" for="blood_type">Blood_Type</label>
                             <select class="form-control" id="type" name="blood_type">
-                                <option selected>Select a blood type ..</option>
+                                <option  value="{{$user->blood_type}}" selected> {{$user->blood_type}}</option>
                                 <option value="AB+">AB+</option>
                                 <option value="AB-">AB-</option>
                                 <option value="A+">A+</option>

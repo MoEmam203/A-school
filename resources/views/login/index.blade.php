@@ -21,7 +21,7 @@
 
           <h1 id="h1"> Login </h1>
           <label for="userName" id="l1"> Username </label>
-          <input type="text" name='id' placeholder="Enter Your ID" id="userName" required/>
+          <input type="text" name='id' placeholder="Enter Your ID or Email" id="userName" required/>
 
           @if ($errors->has('id'))
             <small class="alert alert-danger">

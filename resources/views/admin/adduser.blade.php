@@ -8,7 +8,7 @@
     @section('content')
     <section class="comp-and-sugg">
         <div class="container">
-            <h3 class="text-center">
+            <h3 class="text-center c p" >
                 Add a new user
             </h3>
                 <form action="{{route('store-user')}}" method="post" enctype="multipart/form-data">

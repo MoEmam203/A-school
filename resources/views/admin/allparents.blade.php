@@ -9,7 +9,7 @@
         <!-- Start Complaints And Suggestion Section -->
     <section class="comp-and-sugg">
         <div class="container">
-            <h2 style="color: #A9D7E4; padding:20px 0;">All Parents</h2>
+            <h2 style="color: #A9D7E4; padding:20px 0;  text-align:center">All Parents</h2>
             <table class="table table-dark">
                     <thead>
                         <tr>
@@ -40,7 +40,7 @@
                                 <th scope="col">{{$user->address}}</th>
                                 <th scope="col" style="text-align: center;">{{$user->blood_type}}</th>
                                 <th scope="col">
-                                     <a href="" class="btn btn-success btn-sm">Info</a>
+                                     <a href="{{route('all-info',['id'=>$user->id])}}" class="btn btn-success btn-sm">Info</a>
                                 </th>
                                 <th scope="col">
                                     <a href="{{route('edit-user',['id'=>$user->id])}}" class="btn btn-info btn-sm">Edit</a>

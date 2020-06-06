@@ -47,7 +47,7 @@ Route::post('/admin/store', 'AdminController@store')->name('store-user')->middle
 Route::get('/admin/edit/{id}','AdminController@edit')->name('edit-user')->middleware('admin', 'auth');
 Route::put('/admin/{id}','AdminController@update')->name('update-user')->middleware('admin', 'auth');
 Route::delete('/admin/delete/{id}', 'AdminController@destroy')->name('destroy-user')->middleware('admin', 'auth');
-
+Route::get('/admin/allinfo/{id}', 'AdminController@allinfo')->name('all-info')->middleware('admin', 'auth');
 
 // show & delete complaints
 Route::get('/admin/complaints', 'ComplaintsController@all')->name('complaints')->middleware('admin', 'auth');

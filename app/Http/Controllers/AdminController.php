@@ -72,6 +72,11 @@ class AdminController extends Controller
     }
 
 
+    // User all information
+    public function allinfo($id){
+        $user = User::find($id);
+        return view('admin.allinfo', ['user' => $user]);
+    }
 
 
     // edit user
@@ -86,14 +91,14 @@ class AdminController extends Controller
             'id' => 'required',
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'required|min:6',
+            
             'is_admin' => 'required',
             'dob' => 'required',
             'address' => 'required',
             'type' => 'required',
             'age' => 'required',
             'blood_type' => 'required',
-            'image' => 'required|image',
+            'image' => 'image',
             'level' => 'nullable',
             'parent_id' => 'nullable',
             'job' => 'nullable',
@@ -112,7 +117,9 @@ class AdminController extends Controller
         $user->id = request('id');
         $user->name = request('name');
         $user->email = request('email');
-        $user->password = Hash::make(request('password'));
+        // if($request->has('password')){
+        // $user->password = Hash::make(request('password'));
+        // }
         $user->is_admin = request('is_admin');
         $user->dob = request('dob');
         $user->address = request('address');

@@ -9,7 +9,7 @@
         <!-- Start Complaints And Suggestion Section -->
     <section class="comp-and-sugg">
         <div class="container">
-            <h2 style="color: #A9D7E4; padding:20px 0;">All Complaints & Suggestion</h2>
+            <h2 style="color: #A9D7E4; padding:20px 0;  text-align:center">All Complaints & Suggestion</h2>
             <table class="table table-dark">
                     <thead>
                         <tr>
