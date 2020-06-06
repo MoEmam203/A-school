@@ -38,7 +38,7 @@
                                 <th scope="col">{{$user->level}}</th>
                                 <th scope="col">{{$user->age}}</th>
                                 <th scope="col">{{$user->address}}</th>
-                                <th scope="col">{{$user->blood_type}}</th>
+                                <th scope="col" >{{$user->blood_type}}</th>
                                 <th scope="col"><a href="" class="btn btn-success btn-sm">Info</a></th>
                                 <th scope="col">
                                     <a href="{{route('edit-user',['id'=>$user->id])}}" class="btn btn-info btn-sm">Edit</a>

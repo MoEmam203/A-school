@@ -36,7 +36,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <label class="c" for="is_admin">Is_Admin</label>
-                            <select class="form-control" id="is_admin" name="is_admin" value='{{old('is_admin')}}'>
+                            <select class="form-control" id="is_admin" name="is_admin" >
                                 <option selected>Select a type ..</option>
                                 <option value="admin" >Admin</option>
                                 <option value="student" >Student</option>
@@ -69,7 +69,7 @@
                         
                         <div class="form-group col-md-3">
                             <label class="c" for="type">Type</label>
-                            <select class="form-control" id="type" name="type" value="{{old('type')}}">
+                            <select class="form-control" id="type" name="type" >
                                 <option selected>Select a type ..</option>
                                 <option value="male" >Male</option>
                                 <option value="female">Female</option>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label class="c" for="blood_type">Blood_Type</label>
-                            <select class="form-control" id="type" name="blood_type" value="{{old('blood_type')}}">
+                            <select class="form-control" id="type" name="blood_type" >
                                 <option selected>Select a blood type ..</option>
                                 <option value="AB+">AB+</option>
                                 <option value="AB-">AB-</option>

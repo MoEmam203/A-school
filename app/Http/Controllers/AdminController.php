@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\User;
-use App\complaint;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,6 +15,7 @@ class AdminController extends Controller
 
     public function allparents()
     {
+        
         $users = User::where('is_admin', 'parent')->get();
         return view('admin.allparents', ['users' => $users]);
     }
@@ -60,7 +60,7 @@ class AdminController extends Controller
         $user->type = request('type');
         $user->age = request('age');
         $user->blood_type = request('blood_type');
-        $user->img = request('image');
+        // $user->img = request('image');
         $user->level = request('level');
         $user->parent_id = request('parent_id');
         $user->job = request('job');
@@ -119,14 +119,14 @@ class AdminController extends Controller
         $user->type = request('type');
         $user->age = request('age');
         $user->blood_type = request('blood_type');
-        $user->img = request('image');
+        // $user->img = request('image');
         $user->level = request('level');
         $user->parent_id = request('parent_id');
         $user->job = request('job');
         // dd($user);
         $user->save();
         Session()->flash('success', 'User saved succesfully');
-        return redirect('/admin/create');
+        return redirect()->back();
     }
 
 
@@ -145,8 +145,4 @@ class AdminController extends Controller
         return redirect()->back();
 
     }
-
-
-   
-
 }

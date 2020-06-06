@@ -38,7 +38,7 @@
                                 <th scope="col">{{$user->age}}</th>
                                 <th scope="col">{{$user->job}}</th>
                                 <th scope="col">{{$user->address}}</th>
-                                <th scope="col">{{$user->blood_type}}</th>
+                                <th scope="col" style="text-align: center;">{{$user->blood_type}}</th>
                                 <th scope="col">
                                      <a href="" class="btn btn-success btn-sm">Info</a>
                                 </th>
