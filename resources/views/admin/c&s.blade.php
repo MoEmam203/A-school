@@ -25,7 +25,13 @@
                                 <th scope="col">{{$c->id}}</th>
                                 <th scope="col">{{$c->content}}</th>
                                 <th scope="col">{{$c->user_id}}</th>  
-                                <th scope="col"><a href="" class="btn btn-danger btn-sm">Delete</a></th>
+                                <th scope="col">
+                                    <form action="{{route('destroy-complaint',['id'=>$c->id])}}" method="post">
+                                        @csrf
+                                        {{method_field('DELETE')}}
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                   </form>
+                                </th>
                             </tr>
                         @endforeach
                         

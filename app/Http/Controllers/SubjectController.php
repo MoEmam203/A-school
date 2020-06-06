@@ -33,7 +33,44 @@ class SubjectController extends Controller
             $subject->level = request('level');
 
             $subject->save();
-            Session()->flash('success', 'subjects saved succesfully');
+            Session()->flash('success', 'Subject saved succesfully');
             return redirect('/admin/subject/create');
+
+
+
+        }
+
+    public function edit($id){
+        $sub = subject::find($id);
+        return view('admin.editsubject',['sub'=>$sub]);
+    }
+
+
+    public function update( $id)
+    {
+        request()->validate([
+            'code' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'level' => 'required'
+        ]);
+
+        $subject = subject::find($id);
+
+        $subject->code = request('code');
+        $subject->name = request('name');
+        $subject->description = request('description');
+        $subject->level = request('level');
+
+        $subject->save();
+        Session()->flash('success', 'Subject saved succesfully');
+        return redirect('/admin/subjects');
+    }
+
+
+    public function destroy($id){
+        subject::find($id)->delete();
+        Session()->flash('success', 'Subject deleted succesfully');
+        return redirect()->back();
     }
 }

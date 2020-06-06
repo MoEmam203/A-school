@@ -30,16 +30,32 @@
                         @foreach ($users as $user)
                             <tr>
                                 <th scope="col">{{$user->id}}</th>
-                                <th scope="col">Img</th>
+                                <th scope="col">
+                                    <img src="{{$user->img}}" style="width: 50px; height: 50px;" alt="">
+                                </th>
                                 <th scope="col">{{$user->name}}</th>
                                 <th scope="col">{{$user->email}}</th>
                                 <th scope="col">{{$user->age}}</th>
                                 <th scope="col">{{$user->job}}</th>
                                 <th scope="col">{{$user->address}}</th>
                                 <th scope="col">{{$user->blood_type}}</th>
-                                <th scope="col"><a href="" class="btn btn-success btn-sm">Info</a></th>
-                                <th scope="col"><a href="" class="btn btn-info btn-sm">Edit</a></th>
-                                <th scope="col"><a href="" class="btn btn-danger btn-sm">Delete</a></th>
+                                <th scope="col">
+                                     <a href="" class="btn btn-success btn-sm">Info</a>
+                                </th>
+                                <th scope="col">
+                                    <a href="{{route('edit-user',['id'=>$user->id])}}" class="btn btn-info btn-sm">Edit</a>
+                                </th>
+
+                                <th scope="col">
+                                    
+                                    <form action="{{route('destroy-user',['id'=>$user->id])}}" method="post">
+                                        @csrf
+                                        {{method_field('DELETE')}}
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                   </form>
+                                
+                                
+                                </th>
                             </tr>
                         @endforeach
                         

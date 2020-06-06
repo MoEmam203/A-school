@@ -25,9 +25,25 @@ class ComplaintsController extends Controller
         $complaint->content = request('complaints-and-suggestions');
         $complaint->user_id = request('user_id');
         $complaint->save();
-        Session()->flash('mssg', 'Massage sent succsefully');
+        Session()->flash('success', 'Massage sent succsefully');
         return redirect('complaints');
     }
 
-    
+
+    // Show Complaints in admin panal
+    public function all()
+    {
+        $c = Complaint::all();
+        return view('admin.c&s', ['c' => $c]);
+    }
+
+
+    // delete complaints in admin panal
+
+    public function destroy($id)
+    {
+        complaint::find($id)->delete();
+        Session()->flash('success', 'Complaint Deleted succesfully');
+        return redirect()->back();
+    }
 }

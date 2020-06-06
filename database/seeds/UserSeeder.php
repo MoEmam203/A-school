@@ -16,13 +16,13 @@ class UserSeeder extends Seeder
        $s1=[
         'id'=>203,
         'name'=>'mostafa emam',
+        'img'=>'uploads/users/avatar.png',
         'is_admin'=>'admin',
         'email'=>'mostafa.emam@school.com',
         'password' => Hash::make('test123'),
         'address'=>'mansoura',
         'dob'=>'1995-03-20',
-        'blood_type'=>'A+',
-        'img'=>'uploads/avatar/avatar.png',
+        'blood_type'=>'A+',       
         'job'=>'admin',
         'age'=>25,
         'type'=>'male'
@@ -31,6 +31,7 @@ class UserSeeder extends Seeder
     $s2 = [
         'id' => 300,
         'name' => 'rewan zain',
+            'img' => 'uploads/users/avatar.png',
         'is_admin' => 'student',
         'email' => 'rewan.zain@school.com',
         'password' => Hash::make('test123'),
@@ -39,13 +40,14 @@ class UserSeeder extends Seeder
         'address' => 'mansoura',
         'dob' => '2013-03-01',
         'blood_type' => 'A+',
-        'img' => 'uploads/avatar/avatar.png',
+        
         'age' => 7,
         'type' => 'female'
     ];
     $s3 = [
         'id' => 301,
         'name' => 'mahmoud siliman',
+            'img' => 'uploads/users/avatar.png',
         'is_admin' => 'student',
         'email' => 'mahmoud.siliman@school.com',
         'password' => Hash::make('test123'),
@@ -54,13 +56,14 @@ class UserSeeder extends Seeder
         'address' => 'mansoura',
         'dob' => '2013-03-01',
         'blood_type' => 'A+',
-        'img' => 'uploads/avatar/avatar.png',
+        
         'age' => 8,
         'type' => 'male'
     ];
     $s4 = [
         'id' => 302,
         'name' => 'khaled elsaba',
+            'img' => 'uploads/users/avatar.png',
         'is_admin' => 'student',
         'email' => 'khaled.elsaba@school.com',
         'password' => Hash::make('test123'),
@@ -69,13 +72,14 @@ class UserSeeder extends Seeder
         'address' => 'mansoura',
         'dob' => '2013-03-01',
         'blood_type' => 'A+',
-        'img' => 'uploads/avatar/avatar.png',
+        
         'age' => 9,
         'type' => 'male'
     ];
     $s5 = [
         'id' => 303,
         'name' => 'rahma mohamed',
+            'img' => 'uploads/users/avatar.png',
         'is_admin' => 'student',
         'email' => 'rahma.mohamed@school.com',
         'password' => Hash::make('test123'),
@@ -84,20 +88,19 @@ class UserSeeder extends Seeder
         'address' => 'mansoura',
         'dob' => '2013-03-01',
         'blood_type' => 'A+',
-        'img' => 'uploads/avatar/avatar.png',
         'age' => 10,
         'type' => 'female'
     ];
     $s6 = [
         'id' => 400,
         'name' => 'zain eldin',
+            'img' => 'uploads/users/avatar.png',
         'is_admin' => 'parent',
         'email' => 'zain.eldin@school.com',
         'password' => Hash::make('test123'),
         'address' => 'mansoura',
         'dob' => '1998-03-01',
         'blood_type' => 'A+',
-        'img' => 'uploads/avatar/avatar.png',
         'age' => 30,
         'job' =>'teacher',
         'type' => 'male'
@@ -105,6 +108,7 @@ class UserSeeder extends Seeder
     $s7 = [
         'id' => 401,
         'name' => 'siliman mohamed',
+            'img' => 'uploads/users/avatar.png',
         'is_admin' => 'parent',
         'email' => 'siliamn.mohamed@school.com',
         'password' => Hash::make('test123'),
@@ -119,13 +123,14 @@ class UserSeeder extends Seeder
     $s8 = [
         'id' => 402,
         'name' => 'elsaba mohamed',
+            'img' => 'uploads/users/avatar.png',
         'is_admin' => 'parent',
         'email' => 'elsaba.mohamed@school.com',
         'password' => Hash::make('test123'),
         'address' => 'mansoura',
         'dob' => '1998-03-01',
         'blood_type' => 'A+',
-        'img' => 'uploads/avatar/avatar.png',
+        
         'age' => 30,
             'job' => 'teacher',
         'type' => 'male'
@@ -133,13 +138,14 @@ class UserSeeder extends Seeder
     $s9 = [
         'id' => 403,
         'name' => 'nada ahmed',
+         
         'is_admin' => 'parent',
         'email' => 'nada.ahmed@school.com',
         'password' => Hash::make('test123'),
         'address' => 'mansoura',
         'dob' => '1998-03-01',
         'blood_type' => 'A+',
-        'img' => 'uploads/avatar/avatar.png',
+        'img' => 'uploads/users/avatar.png',
         'age' => 30,
             'job' => 'teacher',
         'type' => 'female'

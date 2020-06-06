@@ -69,7 +69,7 @@
 	<section class="data">
 		<div class="card">
 			<div class="card-body">
-				<img src="{{asset('app/pics/parentAndStudent/avatar.png')}}" class="card-img-top" alt="avatar">
+				<img src="{{$user->img}}" class="card-img-top" alt="avatar">
 				<ul class="list-unstyled">
 					<li> <i class="fas fa-pen"></i> <span>Name: </span> {{$user->name}} </li>
 					<li> <i class="fas fa-address-card"></i> <span>ID: </span> {{$user->id}} </li>

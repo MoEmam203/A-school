@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
@@ -38,20 +39,28 @@ Route::post('change-password', 'ChangePasswordController@store')->name('change.p
 
 // Admin
 
-// show & add user
+// CRUD user
 Route::get('/admin','AdminController@allstudents')->name('students')->middleware('admin','auth');
 Route::get('/admin/parents', 'AdminController@allparents')->name('parents')->middleware('admin', 'auth');
 Route::get('/admin/create', 'AdminController@create')->name('add-user')->middleware('admin', 'auth');
 Route::post('/admin/store', 'AdminController@store')->name('store-user')->middleware('admin', 'auth');
+Route::get('/admin/edit/{id}','AdminController@edit')->name('edit-user')->middleware('admin', 'auth');
+Route::put('/admin/{id}','AdminController@update')->name('update-user')->middleware('admin', 'auth');
+Route::delete('/admin/delete/{id}', 'AdminController@destroy')->name('destroy-user')->middleware('admin', 'auth');
 
-// show complaints
-Route::get('/admin/complaints', 'AdminController@complaints')->name('complaints')->middleware('admin', 'auth');
 
-// show & add subject
+// show & delete complaints
+Route::get('/admin/complaints', 'ComplaintsController@all')->name('complaints')->middleware('admin', 'auth');
+Route::delete('/admin/complaints/delete/{id}', 'ComplaintsController@destroy')->name('destroy-complaint')->middleware('admin', 'auth');
+
+
+// CRUD subject
 Route::get('/admin/subjects', 'SubjectController@all')->name('subjects')->middleware('admin', 'auth');
 Route::get('/admin/subject/create', 'SubjectController@create')->name('add-subject')->middleware('admin', 'auth');
 Route::post('/admin/subject/store', 'SubjectController@store')->name('store-subject')->middleware('admin', 'auth');
-
+Route::get('/admin/subject/edit/{id}','SubjectController@edit')->name('edit-subject')->middleware('admin', 'auth');
+Route::put('/admin/subject/{id}','SubjectController@update')->name('update-subject')->middleware('admin', 'auth');
+Route::delete('/admin/subject/delete/{id}', 'SubjectController@destroy')->name('destroy-subject')->middleware('admin', 'auth');
 
 // show & add schedule
 Route::get('/admin/schedules', 'ScheduleController@all')->name('schedules')->middleware('admin', 'auth');

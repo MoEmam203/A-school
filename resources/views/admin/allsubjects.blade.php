@@ -18,7 +18,9 @@
                             <th class="c" scope="col">Code</th>
                             <th class="c" scope="col">Name</th>
                             <th class="c" scope="col">Description</th>
-                            <th class="c" scope="col">Level</th>                                                                                    
+                            <th class="c" scope="col">Level</th>   
+                            <th class="c" scope="col">Edit</th>
+                            <th class="c" scope="col">Delete</th>                                                                                 
                         </tr>
                     </thead>
                     <tbody>
@@ -28,7 +30,17 @@
                                 <th scope="col">{{$s->code}}</th>
                                 <th scope="col">{{$s->name}}</th>
                                 <th scope="col">{{$s->description}}</th>
-                                <th scope="col">{{$s->level}}</th>                               
+                                <th scope="col">{{$s->level}}</th>  
+                                <th scope="col">
+                                    <a href="{{route('edit-subject',['id'=>$s->id])}}" class="btn btn-info btn-sm">Edit</a>
+                                </th>
+                                <th scope="col">                                   
+                                    <form action="{{route('destroy-subject',['id'=>$s->id])}}" method="post">
+                                        @csrf
+                                        {{method_field('DELETE')}}
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                   </form>
+                                </th>                             
                             </tr>
                         @endforeach
                         
