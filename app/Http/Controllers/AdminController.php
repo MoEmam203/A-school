@@ -120,6 +120,9 @@ class AdminController extends Controller
         // if($request->has('password')){
         // $user->password = Hash::make(request('password'));
         // }
+        if(request('password')){
+            $user->password = Hash::make(request('password'));
+        }
         $user->is_admin = request('is_admin');
         $user->dob = request('dob');
         $user->address = request('address');

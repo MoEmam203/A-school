@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\subject;
 use App\schedule;
 use App\User;
 use Illuminate\Http\Request;
@@ -28,7 +29,8 @@ class ScheduleController extends Controller
 
     public function create()
     {
-        return view('admin.schedules.addschedule');
+        $s = subject::all();
+        return view('admin.schedules.addschedule',['s'=>$s]);
     }
 
     public function store()

@@ -29,8 +29,13 @@
                             <input type="number" class="form-control" id="class_order" name="class_order">
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="c" for="sub_id">Sub_id</label>
-                            <input type="number" class="form-control" id="sub_id" name="sub_id">
+                            <label class="c" for="sub_id">Subject</label>
+                            <select class="form-control" id="sub_id" name="sub_id" >
+                                <option selected>Select a subject ..</option>
+                                @foreach ($s as $s)
+                                    <option value="{{$s->id}}" >{{$s->code}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="c" for="exam_id">Exam_id</label>
