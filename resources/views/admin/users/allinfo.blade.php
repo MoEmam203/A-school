@@ -34,7 +34,7 @@
                 <br>
                 <label class="c" for="blood_type">Blood_type: {{$user->blood_type}}</label>
                 <br>
-                @if($user->is_admin=='student')
+                @if($user->is_admin=='parent')
                 <label class="c" for="job">Job: {{$user->job}}</label>
                 <br> 
                 @endif
@@ -44,6 +44,12 @@
                 <br>
 
                 <a href="{{route('edit-user',['id'=>$user->id])}}" class="btn btn-info" style="margin:20px 10px 0px 0px; padding:7px 48px;">Edit</a>
+
+                <form action="{{route('destroy-user',['id'=>$user->id])}}" method="post" >
+                    @csrf
+                    {{method_field('DELETE')}}
+                    <button class="btn btn-sm btn-danger" style="margin:20px 10px 0px 0px; padding:8px 41px;">Delete</button>
+                </form>
                 {{-- <a href="" class="btn btn-danger" style="margin:20px 0px 0px 0px;">Delete</a> --}}
             </div>
         </div>
