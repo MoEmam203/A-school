@@ -11,11 +11,11 @@ class SubjectController extends Controller
 {
     public function all(){
         $sub = subject::all();
-        return view('admin.allsubjects',["sub"=>$sub]);
+        return view('admin.subjects.allsubjects',["sub"=>$sub]);
     }
 
     public function create(){
-        return view ('admin.addsubject');
+        return view ('admin.subjects.addsubject');
     }
 
     public function store(){
@@ -42,7 +42,7 @@ class SubjectController extends Controller
 
     public function edit($id){
         $sub = subject::find($id);
-        return view('admin.editsubject',['sub'=>$sub]);
+        return view('admin.subjects.editsubject',['sub'=>$sub]);
     }
 
 

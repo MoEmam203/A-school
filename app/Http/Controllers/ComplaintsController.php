@@ -34,7 +34,7 @@ class ComplaintsController extends Controller
     public function all()
     {
         $c = Complaint::all();
-        return view('admin.c&s', ['c' => $c]);
+        return view('admin.complaints.c&s', ['c' => $c]);
     }
 
 

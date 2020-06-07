@@ -10,19 +10,19 @@ class AdminController extends Controller
     //  Show Users
     public function allstudents(){
         $users = User::where('is_admin','student')->get();
-       return view('admin.allstudents',['users' => $users]);
+       return view('admin.users.allstudents',['users' => $users]);
     }
 
     public function allparents()
     {
         
         $users = User::where('is_admin', 'parent')->get();
-        return view('admin.allparents', ['users' => $users]);
+        return view('admin.users.allparents', ['users' => $users]);
     }
 
     // Add user
     public function create(){
-        return view('admin.adduser');
+        return view('admin.users.adduser');
     }
 
     public function store(){
@@ -75,14 +75,14 @@ class AdminController extends Controller
     // User all information
     public function allinfo($id){
         $user = User::find($id);
-        return view('admin.allinfo', ['user' => $user]);
+        return view('admin.users.allinfo', ['user' => $user]);
     }
 
 
     // edit user
     public function edit($id){
         $user = User::find($id);
-        return view('admin.edituser',['user'=>$user]);
+        return view('admin.users.edituser',['user'=>$user]);
     }
 
     // update user 

@@ -115,7 +115,7 @@ class UserSeeder extends Seeder
         'address' => 'mansoura',
         'dob' => '1998-03-01',
         'blood_type' => 'A+',
-        'img' => 'uploads/avatar/avatar.png',
+        
         'age' => 30,
             'job' => 'teacher',
         'type' => 'male'

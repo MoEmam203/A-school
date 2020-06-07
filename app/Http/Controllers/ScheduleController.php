@@ -23,12 +23,12 @@ class ScheduleController extends Controller
 
     public function all()
     {
-       return view ('admin.allschedules');
+       return view ('admin.schedules.allschedules');
     }
 
     public function create()
     {
-        return view('admin.addschedule');
+        return view('admin.schedules.addschedule');
     }
 
     public function store()
