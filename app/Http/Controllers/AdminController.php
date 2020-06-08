@@ -149,10 +149,17 @@ class AdminController extends Controller
             unlink($user->img);
         }
 
+        if($user->is_admin == 'student'){
+            $user->delete();
+
+            Session()->flash('success', 'User Deleted succesfully');
+            return redirect('/admin');
+        }
+
         $user->delete();
 
         Session()->flash('success', 'User Deleted succesfully');
-        return redirect()->back();
+        return redirect('/admin/parents');
 
     }
 }
