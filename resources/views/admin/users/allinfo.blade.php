@@ -11,7 +11,7 @@
         <div class="container">
             <h2 style="color: #A9D7E4; padding:20px 0; text-align:center">All Information</h2>
             <div class="col-md-3">
-                <img src="{{$user->img}}">
+                <img src ="{{asset($user->img)}}">
             </div>
             <div class="col-md-9">
                 <label class="c" for="id">Id: {{$user->id}}</label>

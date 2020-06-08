@@ -31,7 +31,7 @@
                             <tr>
                                 <th scope="col">{{$user->id}}</th>
                                 <th scope="col">
-                                    <img src="{{$user->img}}" style="width: 50px; height: 50px;" alt="">
+                                    <img src ="{{asset($user->img)}}" style="width: 50px; height: 50px;" alt="">
                                 </th>
                                 <th scope="col">{{$user->name}}</th>
                                 <th scope="col">{{$user->email}}</th>
