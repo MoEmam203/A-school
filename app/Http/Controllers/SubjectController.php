@@ -10,7 +10,7 @@ use Session;
 class SubjectController extends Controller
 {
     public function all(){
-        $sub = subject::all();
+        $sub = subject::all()->sortBy('level');
         return view('admin.subjects.allsubjects',["sub"=>$sub]);
     }
 

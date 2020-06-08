@@ -80,13 +80,42 @@
 				</thead>
 				<tbody>
 					<tr>
-						@foreach ($s as $s)
-							<th scope="row"> {{$s->day_order}} </th>
-							
-							<td> {{$s->subject->name}} </td>
-							
+						<th>SAT</th>
+						@foreach ($s1 as $s)
+							<td> {{$s->subject->name}} </td>						
 						@endforeach
 					</tr>
+					<tr>
+						<th>SUN</th>
+						@foreach ($s2 as $s)
+							<td> {{$s->subject->name}} </td>						
+						@endforeach
+					</tr>
+					<tr>
+						<th>MON</th>
+						@foreach ($s3 as $s)
+							<td> {{$s->subject->name}} </td>						
+						@endforeach
+					</tr>
+					<tr>
+						<th>TUE</th>
+						@foreach ($s4 as $s)
+							<td> {{$s->subject->name}} </td>						
+						@endforeach
+					</tr>
+					<tr>
+						<th>WED</th>
+						@foreach ($s5 as $s)
+							<td> {{$s->subject->name}} </td>						
+						@endforeach
+					</tr>
+					<tr>
+						<th>THR</th>
+						@foreach ($s6 as $s)
+							<td> {{$s->subject->name}} </td>						
+						@endforeach
+					</tr>
+
 				</tbody>
 			</table>
 		</div>
