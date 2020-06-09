@@ -167,7 +167,7 @@ class ScheduleController extends Controller
 
     public function create()
     {
-        $s = subject::all();
+        $s = subject::all()->sortBy('level');
         return view('admin.schedules.addschedule',['s'=>$s]);
     }
 
@@ -177,7 +177,7 @@ class ScheduleController extends Controller
             'day_order' => 'required',
             'class_order' => 'required',
             'sub_id' => 'nullable',
-            'e_id' => 'nullable',
+            // 'e_id' => 'nullable',
             'level' => 'required',
             'type' => 'required'
         ]);
@@ -186,7 +186,7 @@ class ScheduleController extends Controller
         $sch->day_order = request('day_order');
         $sch->class_order = request('class_order');
         $sch->sub_id = request('sub_id');
-        $sch->e_id = request('e_id');
+        // $sch->e_id = request('e_id');
         $sch->level = request('level');
         $sch->type = request('type');
 

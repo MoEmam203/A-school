@@ -26,8 +26,11 @@ Route::get('logout', 'LoginController@logout');
 // Showing Data
 Route::get('/data','UserController@show')->name('data')->middleware('auth');
 
-// subjects
+// Study Schedule
 Route::get('/study', 'ScheduleController@index')->name('study')->middleware('auth');
+
+// Exam Schedule
+Route::get('/exam/study', 'ExamScheduleController@index')->name('exam-table')->middleware('auth');
 
 // Complaints
 Route::get('/complaints', 'complaintsController@create')->name('create-complaint')->middleware('auth');
@@ -62,7 +65,11 @@ Route::get('/admin/subject/edit/{id}','SubjectController@edit')->name('edit-subj
 Route::put('/admin/subject/{id}','SubjectController@update')->name('update-subject')->middleware('admin', 'auth');
 Route::delete('/admin/subject/delete/{id}', 'SubjectController@destroy')->name('destroy-subject')->middleware('admin', 'auth');
 
-// show & add schedule
+// show & add study schedule
 Route::get('/admin/schedules', 'ScheduleController@all')->name('schedules')->middleware('admin', 'auth');
 Route::get('/admin/schedule/create', 'ScheduleController@create')->name('add-schedule')->middleware('admin', 'auth');
 Route::post('/admin/schedule/store', 'ScheduleController@store')->name('store-schedule')->middleware('admin', 'auth');
+// show & add exams schedule
+Route::get('/admin/exams/schedules', 'ExamScheduleController@all')->name('exam-schedules')->middleware('admin', 'auth');
+Route::get('/admin/exam/shedule/create','ExamScheduleController@create')->name('add-exam-schedule')->middleware('admin', 'auth');
+Route::post('/admin/exam/schedule/store', 'ExamScheduleController@store')->name('store-exam-schedule')->middleware('admin', 'auth');

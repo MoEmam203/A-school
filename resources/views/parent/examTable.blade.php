@@ -22,7 +22,7 @@
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="{{route('study')}}">Study Table</a>
-								<a class="dropdown-item active" href="exameTable.html">Exams Table</a>
+								<a class="dropdown-item active" href="{{route('exam-table')}}">Exams Table</a>
 							</div>
 						</li>
 						<li class="nav-item dropdown">
@@ -78,62 +78,16 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<th scope="row"> Subj 1 </th>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-					</tr>
-					<tr>
-						<th scope="row"> Subj 2 </th>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-					</tr>
-					<tr>
-						<th scope="row"> Subj 3 </th>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-					</tr>
-					<tr>
-						<th scope="row"> Subj 4 </th>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-					</tr>
-					<tr>
-						<th scope="row"> Subj 5 </th>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-					</tr>
-					<tr>
-						<th scope="row"> Subj 6 </th>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-          </tr>
-          <tr>
-						<th scope="row"> Subj 7 </th>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-						<td> --- </td>
-          </tr>
+					@foreach ($s as $s)											
+						<tr>
+							<th scope="row"> {{$s->examSubject->name}} </th>
+							<td> {{$s->date}} </td>
+							<td> {{$s->day}} </td>
+							<td> {{$s->committee}} </td>
+							<td> {{$s->seat_number}} </td>
+							<td> {{$s->time}} </td>
+						</tr>
+					@endforeach
 				</tbody>
 			</table>
 		</div>

@@ -10,7 +10,14 @@ class subject extends Model
 
         
             return $this->hasMany('App\schedule', 'sub_id', 'id');
-    }   
+    }
+
+    public function examSchedule()
+    {
+
+
+        return $this->hasMany('App\ExamSchedule', 'sub_id', 'id');
+    }
     
 
 }

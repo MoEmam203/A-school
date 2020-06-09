@@ -61,8 +61,10 @@
 								Schedule
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="{{route('schedules')}}">All Schedule</a>
-								<a class="dropdown-item" href="{{route('add-schedule')}}">Add New Schedule</a>
+								<a class="dropdown-item" href="{{route('schedules')}}">All Study Schedule</a>
+								<a class="dropdown-item" href="{{route('exam-schedules')}}">All Exams Schedule</a>
+								<a class="dropdown-item" href="{{route('add-schedule')}}">Add New Study Schedule</a>
+								<a class="dropdown-item" href="{{route('add-exam-schedule')}}">Add New Exam Schedule</a>
 							</div>
 						</li>
 						<li class="nav-item">

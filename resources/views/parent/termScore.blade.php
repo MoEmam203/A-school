@@ -22,7 +22,7 @@
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="{{route('study')}}">Study Table</a>
-								<a class="dropdown-item" href="exameTable.html">Exams Table</a>
+								<a class="dropdown-item" href="{{route('exam-table')}}">Exams Table</a>
 							</div>
 						</li>
 						<li class="nav-item dropdown active">

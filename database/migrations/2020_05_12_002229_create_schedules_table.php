@@ -21,8 +21,8 @@ class CreateSchedulesTable extends Migration
             // $table->unsignedInteger('order');
             $table->string('day_order');
             $table->string('class_order');
-            $table->unsignedBigInteger('sub_id')->nullable();
-            $table->unsignedBigInteger('e_id')->nullable();
+            $table->unsignedBigInteger('sub_id');
+            // $table->unsignedBigInteger('e_id')->nullable();
             $table->string('type');
             $table->timestamps();
 
@@ -30,9 +30,9 @@ class CreateSchedulesTable extends Migration
             $table->foreign('sub_id')
                 ->references('id')
                 ->on('subjects');
-            $table->foreign('e_id')
-                ->references('id')
-                ->on('exams');
+            // $table->foreign('e_id')
+            //     ->references('id')
+            //     ->on('exams');
            
         });
     }

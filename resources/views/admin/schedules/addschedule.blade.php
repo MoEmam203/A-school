@@ -37,10 +37,10 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group col-md-6">
+                        {{-- <div class="form-group col-md-6">
                             <label class="c" for="exam_id">Exam_id</label>
                             <input type="number" class="form-control" id="exam_id" name="e_id">
-                        </div>
+                        </div> --}}
                         <div class="form-group col-md-3">
                             <label class="c" for="type">Type</label>
                             <select class="form-control" id="type" name="type">
