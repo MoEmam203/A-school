@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
     @section('title')
-        Schedule
+        Study Schedules
     @stop
 
     
@@ -9,7 +9,7 @@
         <!-- Start Complaints And Suggestion Section -->
     <section class="comp-and-sugg">
         <div class="container">
-            <h2 style="color: #A9D7E4; padding:20px 0; text-align:center;" >All Schedules</h2>
+            <h2 style="color: #A9D7E4; padding:20px 0; text-align:center;" >All  Study Schedules</h2>
             
             <h3 class="c">Level 1</h3>
             <table class="table table-striped table-dark">

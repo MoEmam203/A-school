@@ -24,6 +24,9 @@
 		.toast-warning{background-color:#F89406}
 
 		.p{padding:20px 0;}
+
+		
+}
 	</style>
 </head>
 <body>

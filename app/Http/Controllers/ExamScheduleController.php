@@ -22,12 +22,38 @@ class ExamScheduleController extends Controller
     }
 
     public function all(){
-        return "all exams schedules";
+        $user = User::where('level',1)->first();
+        $s = ExamSchedule::where('user_id', $user->id)->get();
+
+        $user2 = User::where('level', 2)->first();
+        $a = ExamSchedule::where('user_id', $user2->id)->get();
+
+        $user3 = User::where('level', 3)->first();
+        $b = ExamSchedule::where('user_id', $user3->id)->get();
+
+        $user4 = User::where('level', 4)->first();
+        $c = ExamSchedule::where('user_id', $user4->id)->get();
+
+        $user5 = User::where('level', 5)->first();
+        $d = ExamSchedule::where('user_id', $user5->id)->get();
+
+        $user6 = User::where('level', 6)->first();
+        $e = ExamSchedule::where('user_id', $user6->id)->get();
+
+
+        return view('admin.schedules.allexamscheduels',[
+            's'=>$s,
+            'a' => $a,
+            'b' => $b,
+            'c' => $c,
+            'd' => $d,
+            'e' => $e,
+            ]);
     }
 
     public function create(){
         $s = subject::all()->sortBy('level');
-        return view('admin.schedules.addexamschedule',['s'=>$s]);
+        return view('admin.schedules.addexamschedule',['s'=> $s]);
     }
 
     public function store(){
