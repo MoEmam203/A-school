@@ -4,12 +4,20 @@ namespace App\Http\Controllers;
 
 use App\subject;
 use App\result;
+use App\User;
 use Illuminate\Http\Request;
 
 class ResultController extends Controller
 {
 
     public function index(){
+        if (Auth()->User()->is_admin == 'parent') {
+            $user = User::where('parent_id', Auth()->User()->id)->first();
+            $r = result::where('student_id', $user->id)->get();
+            return view('parent.termScore', ['r' => $r]);
+        }
+
+
         $r = result::where('student_id',Auth()->User()->id)->get();
         
         return view('parent.termScore',['r'=>$r]);
