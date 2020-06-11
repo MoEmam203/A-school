@@ -35,7 +35,7 @@
 							</div>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="studentMonthlyReport.html">Monthly Report</a>
+							<a class="nav-link" href="{{route('report')}}">Monthly Report</a>
 						</li>
 						<li class="nav-item active">
 							<a class="nav-link hidde-exam" href="studentExam.html">Exam</a>

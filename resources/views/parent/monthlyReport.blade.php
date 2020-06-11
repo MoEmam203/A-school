@@ -35,7 +35,7 @@
 							</div>
 						</li>
 						<li class="nav-item active">
-							<a class="nav-link" href="monthlyReport.html">Monthly Report</a>
+							<a class="nav-link" href="{{route('report')}}">Monthly Report</a>
 						</li>
 					@if (Auth()->User()->is_admin == 'parent')
 							<li class="nav-item">
@@ -83,41 +83,15 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($s as $s)
+                        
+                    
                     <tr>
-                      <th scope="row"> Subj 1 </th>
+                      <th scope="row"> {{$s->subject->name}} </th>
                       <td>
-                        <p> --- </p>
+                        <p> {{$s->mid}} </p>
                     </tr>
-                    <tr>
-                      <th scope="row"> Subj 2 </th>
-                      <td> 
-                        <p> --- </p>
-                    </tr>
-                    <tr>
-                      <th scope="row"> Subj 3 </th>
-                      <td> 
-                        <p> --- </p>
-                    </tr>
-                    <tr>
-                      <th scope="row"> Subj 4 </th>
-                      <td> 
-                        <p> --- </p>
-                    </tr>
-                    <tr>
-                      <th scope="row"> Subj 5 </th>
-                      <td> 
-                        <p> --- </p>
-                    </tr>
-                    <tr>
-                      <th scope="row"> Subj 6 </th>
-                      <td> 
-                        <p> --- </p>
-                    </tr>
-                    <tr>
-                      <th scope="row"> Subj 7 </th>
-                      <td> 
-                        <p> --- </p>
-                    </tr>
+                   @endforeach
                   </tbody>
                 </table>
               </div>
@@ -132,7 +106,7 @@
           <div class="card">
             <div class="card-body">
               <h3 class="card-title text-center text-uppercase">absent</h3>
-              <p class="card-text"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea labore laborum velit tempore saepe quae. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea labore laborum velit tempore saepe quae.</p>
+              <p class="card-text"> {{$r->absent}}</p>
             </div>
           </div>
         </div>
@@ -142,7 +116,7 @@
           <div class="card">
             <div class="card-body">
               <h3 class="card-title text-center text-uppercase">general notes</h3>
-              <p class="card-text"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea labore laborum velit tempore saepe quae. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea labore laborum velit tempore saepe quae. </p>
+              <p class="card-text"> {{$r->notes}} </p>
             </div>
           </div>
         </div>

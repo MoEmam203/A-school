@@ -45,6 +45,10 @@ Route::get('/result', 'ResultController@index')->name('term')->middleware('auth'
 Route::get('/result/all', 'ResultController@all')->name('general')->middleware('auth');
 
 
+// report
+Route::get('/report', 'ReportController@index')->name('report')->middleware('auth');
+
+
 // Admin
 
 Route::group(['prefix' => 'admin','middleware' => 'auth','admin'], function () {
@@ -83,4 +87,9 @@ Route::group(['prefix' => 'admin','middleware' => 'auth','admin'], function () {
     // add result
     Route::get('/result/create', 'ResultController@create')->name('add-result');
     Route::post('/result/store', 'ResultController@store')->name('store-result');
+
+
+    // add report
+    Route::get('/report/create', 'ReportController@create')->name('add-report');
+    Route::post('/report/store', 'ReportController@store')->name('store-report');
 });

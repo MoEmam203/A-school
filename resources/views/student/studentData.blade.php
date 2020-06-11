@@ -35,7 +35,7 @@
 							</div>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="studentMonthlyReport.html">Monthly Report</a>
+							<a class="nav-link" href="{{route('report')}}">Monthly Report</a>
 						</li>
 						@if (Auth()->User()->is_admin == 'parent')
 							<li class="nav-item">
