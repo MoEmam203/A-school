@@ -43,11 +43,11 @@
 							</li>
 						@endif
 						
-						@if (Auth()->User()->is_admin == 'student')
+						{{-- @if (Auth()->User()->is_admin == 'student')
 							<li class="nav-item">
 								<a class="nav-link hidde-exam" href="studentExam.html">Exam</a>
 							</li>
-						@endif
+						@endif --}}
 						<li class="nav-item dropdown active">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Account

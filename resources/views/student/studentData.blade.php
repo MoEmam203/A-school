@@ -37,17 +37,18 @@
 						<li class="nav-item">
 							<a class="nav-link" href="{{route('report')}}">Monthly Report</a>
 						</li>
+						
 						@if (Auth()->User()->is_admin == 'parent')
 							<li class="nav-item">
 								<a class="nav-link" href="{{route('create-complaint')}}">Complaints and Suggestions</a>
 							</li>
 						@endif
 						
-						@if (Auth()->User()->is_admin == 'student')
+						{{-- @if (Auth()->User()->is_admin == 'student')
 							<li class="nav-item">
 								<a class="nav-link hidde-exam" href="studentExam.html">Exam</a>
 							</li>
-						@endif
+						@endif --}}
 
 
 						<li class="nav-item dropdown">
