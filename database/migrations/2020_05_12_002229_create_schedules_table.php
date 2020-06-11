@@ -23,7 +23,7 @@ class CreateSchedulesTable extends Migration
             $table->string('class_order');
             $table->unsignedBigInteger('sub_id');
             // $table->unsignedBigInteger('e_id')->nullable();
-            $table->string('type');
+            $table->enum('type', ['first', 'second']);;
             $table->timestamps();
 
 

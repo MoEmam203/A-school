@@ -17,16 +17,28 @@ class CreateResultsTable extends Migration
             $table->bigIncrements('id');
             // $table->unsignedInteger('r_id')->unique();
             $table->unsignedInteger('result');
-            $table->unsignedBigInteger('exam_id');
-            $table->unsignedBigInteger('student_id');
+            // $table->unsignedBigInteger('exam_id');
+            $table->string('degree');
+            $table->string('final');
+            $table->string('oral');
+            $table->string('mid');
+            $table->string('pract')->nullable();
+            $table->enum('type',['first','second']);
+            $table->unsignedBigInteger('sub_id');
+            $table->unsignedBigInteger('student_id');            
             $table->timestamps();
 
             $table->foreign('student_id')
                 ->references('id')
                 ->on('users');
-            $table->foreign('exam_id')
+
+            $table->foreign('sub_id')
                 ->references('id')
-                ->on('exams');
+                ->on('subjects');
+            
+            // $table->foreign('exam_id')
+            //     ->references('id')
+            //     ->on('exams');
         });
     }
 

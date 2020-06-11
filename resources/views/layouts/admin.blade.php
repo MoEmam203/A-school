@@ -70,6 +70,17 @@
 								<a class="dropdown-item" href="{{route('add-exam-schedule')}}">Add New Exam Schedule</a>
 							</div>
 						</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Result
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								
+								<a class="dropdown-item" href="{{route('add-result')}}">Add New result</a>
+							</div>
+						</li>
+
 						<li class="nav-item">
 								<a class="nav-link" href="{{route('complaints')}}">C & S</a>
 							</li>

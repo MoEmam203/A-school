@@ -183,6 +183,7 @@ class ScheduleController extends Controller
         ]);
 
         $sch = new schedule();
+        
         $sch->day_order = request('day_order');
         $sch->class_order = request('class_order');
         $sch->sub_id = request('sub_id');

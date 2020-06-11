@@ -22,7 +22,7 @@ class CreateExamSchedulesTable extends Migration
             $table->string('time');
             $table->unsignedBigInteger('sub_id');
             $table->unsignedBigInteger('user_id');
-            $table->string('type');
+            $table->enum('type', ['first', 'second']);
             $table->string('level');
             $table->timestamps();
 

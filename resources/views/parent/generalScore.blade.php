@@ -30,8 +30,8 @@
 								Scores
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="termScore.html">Term Scores</a>
-								<a class="dropdown-item active" href="generalScore.html">General Scores</a>
+								<a class="dropdown-item" href="{{route('term')}}">Term Scores</a>
+								<a class="dropdown-item" href="{{route('general')}}">General Scores</a>
 							</div>
 						</li>
 						<li class="nav-item">
@@ -70,7 +70,7 @@
 			<table class="table table-striped table-dark text-center">
 				<thead>
           <tr> 
-            <th class="term-name" colspan="4"> "Term Name" Scores </th>
+            <th class="term-name" colspan="4"> First Term </th>
           </tr>
 					<tr class="text-uppercase">
 						<th scope="col"> subject name </th>
@@ -80,83 +80,22 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<th scope="row"> Subj 1 </th>
-						<td>
-              <p> Detai l: &nbsp; <span> --- </span></p>
-              <p> Detai 2: &nbsp; <span> --- </span></p>
-              <p> Detai 3: &nbsp; <span> --- </span></p>
-              <p> Detai 4: &nbsp; <span> --- </span></p> 
-            </td>
-						<td> --- </td>
-						<td> --- </td>
-					</tr>
-					<tr>
-						<th scope="row"> Subj 2 </th>
-						<td> 
-              <p> Detai l: &nbsp; <span> --- </span></p>
-              <p> Detai 2: &nbsp; <span> --- </span></p>
-              <p> Detai 3: &nbsp; <span> --- </span></p>
-              <p> Detai 4: &nbsp; <span> --- </span></p> 
-            </td>
-						<td> --- </td>
-						<td> --- </td>
-					</tr>
-					<tr>
-						<th scope="row"> Subj 3 </th>
-						<td> 
-              <p> Detai l: &nbsp; <span> --- </span></p>
-              <p> Detai 2: &nbsp; <span> --- </span></p>
-              <p> Detai 3: &nbsp; <span> --- </span></p>
-              <p> Detai 4: &nbsp; <span> --- </span></p> 
-            </td>
-						<td> --- </td>
-						<td> --- </td>
-					</tr>
-					<tr>
-						<th scope="row"> Subj 4 </th>
-						<td> 
-              <p> Detai l: &nbsp; <span> --- </span></p>
-              <p> Detai 2: &nbsp; <span> --- </span></p>
-              <p> Detai 3: &nbsp; <span> --- </span></p>
-              <p> Detai 4: &nbsp; <span> --- </span></p> 
-            </td>
-						<td> --- </td>
-						<td> --- </td>
-					</tr>
-					<tr>
-						<th scope="row"> Subj 5 </th>
-						<td> 
-              <p> Detai l: &nbsp; <span> --- </span></p>
-              <p> Detai 2: &nbsp; <span> --- </span></p>
-              <p> Detai 3: &nbsp; <span> --- </span></p>
-              <p> Detai 4: &nbsp; <span> --- </span></p> 
-            </td>
-						<td> --- </td>
-						<td> --- </td>
-					</tr>
-					<tr>
-						<th scope="row"> Subj 6 </th>
-						<td> 
-              <p> Detai l: &nbsp; <span> --- </span></p>
-              <p> Detai 2: &nbsp; <span> --- </span></p>
-              <p> Detai 3: &nbsp; <span> --- </span></p>
-              <p> Detai 4: &nbsp; <span> --- </span></p> 
-            </td>
-						<td> --- </td>
-						<td> --- </td>
-          </tr>
-          <tr>
-						<th scope="row"> Subj 7 </th>
-						<td> 
-              <p> Detai l: &nbsp; <span> --- </span></p>
-              <p> Detai 2: &nbsp; <span> --- </span></p>
-              <p> Detai 3: &nbsp; <span> --- </span></p>
-              <p> Detai 4: &nbsp; <span> --- </span></p> 
-            </td>
-						<td> --- </td>
-						<td> --- </td>
-          </tr>
+					@foreach ($r as $r)					
+						<tr>
+							<th scope="row"> {{$r->subject->name}} </th>
+							<td>
+								<p> Final : &nbsp; <span> {{$r->final}} </span></p>
+								<p> Midterm : &nbsp; <span> {{$r->mid}}  </span></p>
+								<p> Oral: &nbsp; <span> {{$r->oral}}  </span></p>
+								@if ($r->pract)
+									<p> Practical : &nbsp; <span> {{$r->pract}}  </span></p>
+								@endif
+								 
+							</td>
+							<td> {{$r->result}}  </td>
+							<td> {{$r->degree}}  </td>
+						</tr>
+					@endforeach
 				</tbody>
       </table>
       <!-- End Table -->

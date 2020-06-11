@@ -40,36 +40,47 @@ Route::post('/complaints', 'complaintsController@store')->name('store-complaint'
 Route::get('change-password', 'ChangePasswordController@index')->middleware('auth');
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
 
+// results 
+Route::get('/result', 'ResultController@index')->name('term')->middleware('auth');
+Route::get('/result/all', 'ResultController@all')->name('general')->middleware('auth');
+
+
 // Admin
 
-// CRUD user
-Route::get('/admin','AdminController@allstudents')->name('students')->middleware('admin','auth');
-Route::get('/admin/parents', 'AdminController@allparents')->name('parents')->middleware('admin', 'auth');
-Route::get('/admin/create', 'AdminController@create')->name('add-user')->middleware('admin', 'auth');
-Route::post('/admin/store', 'AdminController@store')->name('store-user')->middleware('admin', 'auth');
-Route::get('/admin/edit/{id}','AdminController@edit')->name('edit-user')->middleware('admin', 'auth');
-Route::put('/admin/{id}','AdminController@update')->name('update-user')->middleware('admin', 'auth');
-Route::delete('/admin/delete/{id}', 'AdminController@destroy')->name('destroy-user')->middleware('admin', 'auth');
-Route::get('/admin/allinfo/{id}', 'AdminController@allinfo')->name('all-info')->middleware('admin', 'auth');
+Route::group(['prefix' => 'admin','middleware' => 'auth','admin'], function () {
+    // CRUD user
+    Route::get('/', 'AdminController@allstudents')->name('students');
+    Route::get('/parents', 'AdminController@allparents')->name('parents');
+    Route::get('/create', 'AdminController@create')->name('add-user');
+    Route::post('/store', 'AdminController@store')->name('store-user');
+    Route::get('/edit/{id}', 'AdminController@edit')->name('edit-user');
+    Route::put('/{id}', 'AdminController@update')->name('update-user');
+    Route::delete('/delete/{id}', 'AdminController@destroy')->name('destroy-user');
+    Route::get('/allinfo/{id}', 'AdminController@allinfo')->name('all-info');
 
-// show & delete complaints
-Route::get('/admin/complaints', 'ComplaintsController@all')->name('complaints')->middleware('admin', 'auth');
-Route::delete('/admin/complaints/delete/{id}', 'ComplaintsController@destroy')->name('destroy-complaint')->middleware('admin', 'auth');
+    // show & delete complaints
+    Route::get('/complaints', 'ComplaintsController@all')->name('complaints');
+    Route::delete('/complaints/delete/{id}', 'ComplaintsController@destroy')->name('destroy-complaint');
 
 
-// CRUD subject
-Route::get('/admin/subjects', 'SubjectController@all')->name('subjects')->middleware('admin', 'auth');
-Route::get('/admin/subject/create', 'SubjectController@create')->name('add-subject')->middleware('admin', 'auth');
-Route::post('/admin/subject/store', 'SubjectController@store')->name('store-subject')->middleware('admin', 'auth');
-Route::get('/admin/subject/edit/{id}','SubjectController@edit')->name('edit-subject')->middleware('admin', 'auth');
-Route::put('/admin/subject/{id}','SubjectController@update')->name('update-subject')->middleware('admin', 'auth');
-Route::delete('/admin/subject/delete/{id}', 'SubjectController@destroy')->name('destroy-subject')->middleware('admin', 'auth');
+    // CRUD subject
+    Route::get('/subjects', 'SubjectController@all')->name('subjects');
+    Route::get('/subject/create', 'SubjectController@create')->name('add-subject');
+    Route::post('/subject/store', 'SubjectController@store')->name('store-subject');
+    Route::get('/subject/edit/{id}', 'SubjectController@edit')->name('edit-subject') ;
+    Route::put('/subject/{id}', 'SubjectController@update')->name('update-subject') ;
+    Route::delete('/subject/delete/{id}', 'SubjectController@destroy')->name('destroy-subject') ;
 
-// show & add study schedule
-Route::get('/admin/schedules', 'ScheduleController@all')->name('schedules')->middleware('admin', 'auth');
-Route::get('/admin/schedule/create', 'ScheduleController@create')->name('add-schedule')->middleware('admin', 'auth');
-Route::post('/admin/schedule/store', 'ScheduleController@store')->name('store-schedule')->middleware('admin', 'auth');
-// show & add exams schedule
-Route::get('/admin/exams/schedules', 'ExamScheduleController@all')->name('exam-schedules')->middleware('admin', 'auth');
-Route::get('/admin/exam/shedule/create','ExamScheduleController@create')->name('add-exam-schedule')->middleware('admin', 'auth');
-Route::post('/admin/exam/schedule/store', 'ExamScheduleController@store')->name('store-exam-schedule')->middleware('admin', 'auth');
+    // show & add study schedule
+    Route::get('/schedules', 'ScheduleController@all')->name('schedules') ;
+    Route::get('/schedule/create', 'ScheduleController@create')->name('add-schedule') ;
+    Route::post('/schedule/store', 'ScheduleController@store')->name('store-schedule') ;
+    // show & add exams schedule
+    Route::get('/exams/schedules', 'ExamScheduleController@all')->name('exam-schedules') ;
+    Route::get('/exam/shedule/create', 'ExamScheduleController@create')->name('add-exam-schedule') ;
+    Route::post('/exam/schedule/store', 'ExamScheduleController@store')->name('store-exam-schedule') ;
+
+    // add result
+    Route::get('/result/create', 'ResultController@create')->name('add-result');
+    Route::post('/result/store', 'ResultController@store')->name('store-result');
+});

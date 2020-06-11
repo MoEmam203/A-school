@@ -30,8 +30,8 @@
 								Scores
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="studentTermScores.html">Term Scores</a>
-								<a class="dropdown-item" href="studentGeneralScores.html">General Scores</a>
+								<a class="dropdown-item" href="{{route('term')}}">Term Scores</a>
+								<a class="dropdown-item" href="{{route('general')}}">General Scores</a>
 							</div>
 						</li>
 						<li class="nav-item">
