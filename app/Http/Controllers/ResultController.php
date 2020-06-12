@@ -23,12 +23,12 @@ class ResultController extends Controller
         return view('parent.termScore',['r'=>$r]);
     }
 
-    public function all()
-    {
-        $r = result::where('student_id', Auth()->User()->id)->get();
-        // $r = $r->where('type', 'first')->get();
-        return view('parent.generalScore', ['r' => $r]);
-    }
+    // public function all()
+    // {
+    //     $r = result::where('student_id', Auth()->User()->id)->get();
+    //     // $r = $r->where('type', 'first')->get();
+    //     return view('parent.generalScore', ['r' => $r]);
+    // }
 
     public function create(){
         $s= subject::all()->sortBy('level');

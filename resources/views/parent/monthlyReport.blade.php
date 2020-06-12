@@ -31,7 +31,7 @@
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="{{route('term')}}">Term Scores</a>
-								<a class="dropdown-item" href="{{route('general')}}">General Scores</a>
+								{{-- <a class="dropdown-item" href="{{route('general')}}">General Scores</a> --}}
 							</div>
 						</li>
 						<li class="nav-item active">

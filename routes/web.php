@@ -42,7 +42,7 @@ Route::post('change-password', 'ChangePasswordController@store')->name('change.p
 
 // results 
 Route::get('/result', 'ResultController@index')->name('term')->middleware('auth');
-Route::get('/result/all', 'ResultController@all')->name('general')->middleware('auth');
+// Route::get('/result/all', 'ResultController@all')->name('general')->middleware('auth');
 
 
 // report
@@ -79,6 +79,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth','admin'], function () {
     Route::get('/schedules', 'ScheduleController@all')->name('schedules') ;
     Route::get('/schedule/create', 'ScheduleController@create')->name('add-schedule') ;
     Route::post('/schedule/store', 'ScheduleController@store')->name('store-schedule') ;
+    
     // show & add exams schedule
     Route::get('/exams/schedules', 'ExamScheduleController@all')->name('exam-schedules') ;
     Route::get('/exam/shedule/create', 'ExamScheduleController@create')->name('add-exam-schedule') ;
