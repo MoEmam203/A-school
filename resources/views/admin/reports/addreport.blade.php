@@ -9,7 +9,7 @@
     <section class="comp-and-sugg">
         <div class="container">
             <h3 class="text-center" style="color: #A9D7E4; padding:20px 0;">
-                Add a new rport
+                Add a new report
             </h3>
                 <form action="{{route('store-report')}}" method="post">
                     @csrf    

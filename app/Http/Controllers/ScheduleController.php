@@ -196,7 +196,54 @@ class ScheduleController extends Controller
         return redirect('/admin/schedule/create');
     }
 
+    public function alledit(){
+        // $ss = subject::all();
+        $s =schedule::all()->sortBy('level');
+        // $s = $s->sortBy('day_order');
+        // $s = $s->sortBy('class_order');
+        return view ('admin.schedules.alledit',['s'=>$s]);
+    }
 
+
+    public function edit($id)
+    {
+        $sch = schedule::find($id);
+        $s = subject::all()->sortBy('level');
+        return view('admin.schedules.editschedule', ['sch' => $sch,'s'=>$s]);
+    }
+
+    public function update($id)
+    {
+        request()->validate([
+            'day_order' => 'required',
+            'class_order' => 'required',
+            'sub_id' => 'nullable',
+            // 'e_id' => 'nullable',
+            'level' => 'required',
+            'type' => 'required'
+        ]);
+
+        $sch = schedule::find($id);
+
+        $sch->day_order = request('day_order');
+        $sch->class_order = request('class_order');
+        $sch->sub_id = request('sub_id');
+        // $sch->e_id = request('e_id');
+        $sch->level = request('level');
+        $sch->type = request('type');
+
+        $sch->save();
+        Session()->flash('success', 'schedule updated succesfully');
+        return redirect('/admin/schedules/all');
+    }
+
+
+    public function destroy($id)
+    {
+        schedule::find($id)->delete();
+        Session()->flash('success', 'Schedule deleted succesfully');
+        return redirect()->back();
+    }
     
 
 }

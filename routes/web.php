@@ -75,15 +75,19 @@ Route::group(['prefix' => 'admin','middleware' => 'auth','admin'], function () {
     Route::put('/subject/{id}', 'SubjectController@update')->name('update-subject') ;
     Route::delete('/subject/delete/{id}', 'SubjectController@destroy')->name('destroy-subject') ;
 
-    // show & add study schedule
+    // CRUD study schedule
     Route::get('/schedules', 'ScheduleController@all')->name('schedules') ;
     Route::get('/schedule/create', 'ScheduleController@create')->name('add-schedule') ;
     Route::post('/schedule/store', 'ScheduleController@store')->name('store-schedule') ;
-    
+    Route::get('/schedules/all', 'ScheduleController@alledit')->name('all-edit');
+    Route::get('/schedule/edit/{id}', 'ScheduleController@edit')->name('edit-schedule');
+    Route::put('/schedule/{id}', 'ScheduleController@update')->name('update-schedule');
+    Route::delete('/schedule/delete/{id}', 'ScheduleController@destroy')->name('destroy-schedule');
+
     // show & add exams schedule
     Route::get('/exams/schedules', 'ExamScheduleController@all')->name('exam-schedules') ;
-    Route::get('/exam/shedule/create', 'ExamScheduleController@create')->name('add-exam-schedule') ;
-    Route::post('/exam/schedule/store', 'ExamScheduleController@store')->name('store-exam-schedule') ;
+    Route::get('/exam/shedule/create', 'ExamScheduleController@create')->name('add-exam-schedule');
+    Route::post('/exam/schedule/store', 'ExamScheduleController@store')->name('store-exam-schedule');
 
     // add result
     Route::get('/result/create', 'ResultController@create')->name('add-result');

@@ -68,6 +68,7 @@
 								<a class="dropdown-item" href="{{route('exam-schedules')}}">All Exams Schedule</a>
 								<a class="dropdown-item" href="{{route('add-schedule')}}">Add New Study Schedule</a>
 								<a class="dropdown-item" href="{{route('add-exam-schedule')}}">Add New Exam Schedule</a>
+								<a class="dropdown-item" href="{{route('all-edit')}}">Edit Study Schedule</a>
 							</div>
 						</li>
 
