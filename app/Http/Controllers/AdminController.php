@@ -106,7 +106,7 @@ class AdminController extends Controller
 
         $user = User::find($id);
 
-        if($request->hasFile('img')){
+        if ($request->hasFile('image')) {
             $user_image = request('image');
             $user_image_new_name = time() . $user_image->getClientOriginalName();
             $user_image->move('uploads/users', $user_image_new_name);
@@ -133,6 +133,8 @@ class AdminController extends Controller
         $user->level = request('level');
         $user->parent_id = request('parent_id');
         $user->job = request('job');
+       
+        
         // dd($user);
         $user->save();
         Session()->flash('success', 'User saved succesfully');

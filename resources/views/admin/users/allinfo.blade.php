@@ -11,7 +11,7 @@
         <div class="container">
             <h2 style="color: #A9D7E4; padding:20px 0; text-align:center">All Information</h2>
             <div class="media" >
-                <img src ="{{asset($user->img)}}" class="align-self-start mr-3" style="margin-left: 135px;" >
+                <img src ="{{asset($user->img)}}" class="align-self-start mr-3" style="margin-left: 135px; width:325px; height:300px;" >
                 <div class="media-body" style="margin-left: 55px; font-size:20px;">
                     <label class="c" for="id">Id: {{$user->id}}</label>
                     <br>
@@ -49,6 +49,8 @@
                             {{method_field('DELETE')}}
                             <button class="btn btn-sm btn-danger" style="margin:20px 10px 0px 0px; padding:8px 41px; font-size:20px;">Delete</button>
                         </form>
+
+                       
                     </div>
                     {{-- <a href="" class="btn btn-danger" style="margin:20px 0px 0px 0px;">Delete</a> --}}
                 </div>
