@@ -33,8 +33,8 @@ Route::get('/study', 'ScheduleController@index')->name('study')->middleware('aut
 Route::get('/exam/study', 'ExamScheduleController@index')->name('exam-table')->middleware('auth');
 
 // Complaints
-Route::get('/complaints', 'complaintsController@create')->name('create-complaint')->middleware('auth');
-Route::post('/complaints', 'complaintsController@store')->name('store-complaint');
+Route::get('/complaints', 'ComplaintsController@create')->name('create-complaint')->middleware('auth');
+Route::post('/complaints', 'ComplaintsController@store')->name('store-complaint');
 
 // Changing password
 Route::get('change-password', 'ChangePasswordController@index')->middleware('auth');
