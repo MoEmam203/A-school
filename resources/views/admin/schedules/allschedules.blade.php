@@ -179,7 +179,7 @@
             
             <hr>
 
-            <h3 class="c">Level 4</h3>
+            {{-- <h3 class="c">Level 4</h3>
             <table class="table table-striped table-dark">
 				<thead>
 					<tr>
@@ -343,7 +343,7 @@
 					</tr>
 
 				</tbody>
-			</table>
+			</table> --}}
         </div>
     </section>
     <!-- End Complaints And Suggestion Section -->

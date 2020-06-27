@@ -97,7 +97,7 @@
 
             <hr>
 
-            <h3 class="c">Level 4</h3>
+            {{-- <h3 class="c">Level 4</h3>
             <table class="table table-striped table-dark">
 				<thead>
 					<tr class="text-uppercase text-center">
@@ -105,7 +105,7 @@
 						<th scope="col"> date </th>
 						<th scope="col">day</th>
 						<th scope="col">exam committee</th>
-						{{-- <th scope="col">seat number</th> --}}
+						
 						<th scope="col">time</th>
 					</tr>
 				</thead>
@@ -116,16 +116,16 @@
 							<td> {{$s->date}} </td>
 							<td> {{$s->day}} </td>
 							<td> {{$s->committee}} </td>
-							{{-- <td> {{$s->seat_number}} </td> --}}
+							
 							<td> {{$s->time}} </td>
 						</tr>
 					@endforeach
 				</tbody>
             </table>
             
-            <hr>
+            <hr> --}}
 
-            <h3 class="c" >Level 5</h3>
+            {{-- <h3 class="c" >Level 5</h3>
             <table class="table table-striped table-dark">
 				<thead>
 					<tr class="text-uppercase text-center">
@@ -133,7 +133,7 @@
 						<th scope="col"> date </th>
 						<th scope="col">day</th>
 						<th scope="col">exam committee</th>
-						{{-- <th scope="col">seat number</th> --}}
+						
 						<th scope="col">time</th>
 					</tr>
 				</thead>
@@ -144,16 +144,16 @@
 							<td> {{$s->date}} </td>
 							<td> {{$s->day}} </td>
 							<td> {{$s->committee}} </td>
-							{{-- <td> {{$s->seat_number}} </td> --}}
+							
 							<td> {{$s->time}} </td>
 						</tr>
 					@endforeach
 				</tbody>
             </table>
 
-            <hr>
+            <hr> --}}
 
-            <h3 class="c">Level 6</h3>
+            {{-- <h3 class="c">Level 6</h3>
             <table class="table table-striped table-dark">
 				<thead>
 					<tr class="text-uppercase text-center">
@@ -161,7 +161,7 @@
 						<th scope="col"> date </th>
 						<th scope="col">day</th>
 						<th scope="col">exam committee</th>
-						{{-- <th scope="col">seat number</th> --}}
+						
 						<th scope="col">time</th>
 					</tr>
 				</thead>
@@ -172,12 +172,12 @@
 							<td> {{$s->date}} </td>
 							<td> {{$s->day}} </td>
 							<td> {{$s->committee}} </td>
-							{{-- <td> {{$s->seat_number}} </td> --}}
+							
 							<td> {{$s->time}} </td>
 						</tr>
 					@endforeach
 				</tbody>
-			</table>
+			</table> --}}
         </div>
     </section>
     <!-- End Complaints And Suggestion Section -->

@@ -31,23 +31,23 @@ class ExamScheduleController extends Controller
         $user3 = User::where('level', 3)->first();
         $b = ExamSchedule::where('user_id', $user3->id)->get();
 
-        $user4 = User::where('level', 4)->first();
-        $c = ExamSchedule::where('user_id', $user4->id)->get();
+        // $user4 = User::where('level', 4)->first();
+        // $c = ExamSchedule::where('user_id', $user4->id)->get();
 
-        $user5 = User::where('level', 5)->first();
-        $d = ExamSchedule::where('user_id', $user5->id)->get();
+        // $user5 = User::where('level', 5)->first();
+        // $d = ExamSchedule::where('user_id', $user5->id)->get();
 
-        $user6 = User::where('level', 6)->first();
-        $e = ExamSchedule::where('user_id', $user6->id)->get();
+        // $user6 = User::where('level', 6)->first();
+        // $e = ExamSchedule::where('user_id', $user6->id)->get();
 
 
         return view('admin.schedules.allexamscheduels',[
-            's'=>$s,
+            's' => $s,
             'a' => $a,
             'b' => $b,
-            'c' => $c,
-            'd' => $d,
-            'e' => $e,
+            // 'c' => $c,
+            // 'd' => $d,
+            // 'e' => $e,
             ]);
     }
 

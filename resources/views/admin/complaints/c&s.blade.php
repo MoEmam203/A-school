@@ -16,6 +16,7 @@
                             <th class="c" scope="col">Id</th>
                             <th class="c" scope="col">content</th>
                             <th class="c" scope="col">User_id</th>
+                            <th class="c" scope="col">Sent at</th>
                             <th class="c" scope="col">Delete</th>
                         </tr>
                     </thead>
@@ -25,6 +26,7 @@
                                 <th scope="col">{{$c->id}}</th>
                                 <th scope="col">{{$c->content}}</th>
                                 <th scope="col">{{$c->user_id}}</th>  
+                                <th scope="col">{{$c->created_at->diffForHumans()}}</th> 
                                 <th scope="col">
                                     <form action="{{route('destroy-complaint',['id'=>$c->id])}}" method="post">
                                         @csrf

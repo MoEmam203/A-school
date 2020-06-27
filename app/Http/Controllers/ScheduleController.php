@@ -83,32 +83,32 @@ class ScheduleController extends Controller
         $a6 = $a->where('day_order', 6);
 
         // Level 4
-        $b = schedule::where('level', 4)->get();
-        $b1 = $b->where('day_order', 1);
-        $b2 = $b->where('day_order', 2);
-        $b3 = $b->where('day_order', 3);
-        $b4 = $b->where('day_order', 4);
-        $b5 = $b->where('day_order', 5);
-        $b6 = $b->where('day_order', 6);
+        // $b = schedule::where('level', 4)->get();
+        // $b1 = $b->where('day_order', 1);
+        // $b2 = $b->where('day_order', 2);
+        // $b3 = $b->where('day_order', 3);
+        // $b4 = $b->where('day_order', 4);
+        // $b5 = $b->where('day_order', 5);
+        // $b6 = $b->where('day_order', 6);
 
 
-        // Level 5
-        $c = schedule::where('level', 5)->get();
-        $c1 = $c->where('day_order', 1);
-        $c2 = $c->where('day_order', 2);
-        $c3 = $c->where('day_order', 3);
-        $c4 = $c->where('day_order', 4);
-        $c5 = $c->where('day_order', 5);
-        $c6 = $c->where('day_order', 6);
+        // // Level 5
+        // $c = schedule::where('level', 5)->get();
+        // $c1 = $c->where('day_order', 1);
+        // $c2 = $c->where('day_order', 2);
+        // $c3 = $c->where('day_order', 3);
+        // $c4 = $c->where('day_order', 4);
+        // $c5 = $c->where('day_order', 5);
+        // $c6 = $c->where('day_order', 6);
 
-        // Level 6
-        $z = schedule::where('level', 6)->get();
-        $z1 = $z->where('day_order', 1);
-        $z2 = $z->where('day_order', 2);
-        $z3 = $z->where('day_order', 3);
-        $z4 = $z->where('day_order', 4);
-        $z5 = $z->where('day_order', 5);
-        $z6 = $z->where('day_order', 6);
+        // // Level 6
+        // $z = schedule::where('level', 6)->get();
+        // $z1 = $z->where('day_order', 1);
+        // $z2 = $z->where('day_order', 2);
+        // $z3 = $z->where('day_order', 3);
+        // $z4 = $z->where('day_order', 4);
+        // $z5 = $z->where('day_order', 5);
+        // $z6 = $z->where('day_order', 6);
 
 
 
@@ -137,28 +137,28 @@ class ScheduleController extends Controller
             'a5' => $a5,
             'a6' => $a6,
 
-            'b1' => $b1,
-            'b2' => $b2,
-            'b3' => $b3,
-            'b4' => $b4,
-            'b5' => $b5,
-            'b6' => $b6,
+            // 'b1' => $b1,
+            // 'b2' => $b2,
+            // 'b3' => $b3,
+            // 'b4' => $b4,
+            // 'b5' => $b5,
+            // 'b6' => $b6,
 
             
-            'c1' => $c1,
-            'c2' => $c2,
-            'c3' => $c3,
-            'c4' => $c4,
-            'c5' => $c5,
-            'c6' => $c6,
+            // 'c1' => $c1,
+            // 'c2' => $c2,
+            // 'c3' => $c3,
+            // 'c4' => $c4,
+            // 'c5' => $c5,
+            // 'c6' => $c6,
 
            
-            'z1' => $z1,
-            'z2' => $z2,
-            'z3' => $z3,
-            'z4' => $z4,
-            'z5' => $z5,
-            'z6' => $z6,
+            // 'z1' => $z1,
+            // 'z2' => $z2,
+            // 'z3' => $z3,
+            // 'z4' => $z4,
+            // 'z5' => $z5,
+            // 'z6' => $z6,
 
             ]);
 
